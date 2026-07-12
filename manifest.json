@@ -1,0 +1,23 @@
+{
+  "figure-style": {
+    "origin": "anthropic",
+    "files": [
+      "SKILL.md",
+      "kernel.py"
+    ]
+  },
+  "figure-composer": {
+    "origin": "anthropic",
+    "files": [
+      "SKILL.md",
+      "kernel.py"
+    ]
+  },
+  "paper-narrative": {
+    "origin": "anthropic",
+    "files": [
+      "SKILL.md",
+      "kernel.py"
+    ]
+  }
+}
