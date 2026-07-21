@@ -50,6 +50,7 @@ chart-choice logic, etc.) applies as-is regardless of language/tool -- only the
 - `figure-style/`      - single-plot publication-grade correctness rules + helpers
 - `figure-composer/`   - multi-panel figure composition workflow
 - `paper-narrative/`   - whole-paper figure arc / narrative review workflow
+- `literature-review/` - source-grounded scientific literature search and synthesis
 
 ## Adding a skill
 

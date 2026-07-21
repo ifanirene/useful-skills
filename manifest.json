@@ -19,5 +19,12 @@
       "SKILL.md",
       "kernel.py"
     ]
+  },
+  "literature-review": {
+    "origin": "anthropic",
+    "files": [
+      "SKILL.md",
+      "kernel.py"
+    ]
   }
 }
