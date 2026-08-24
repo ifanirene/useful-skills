@@ -1,0 +1,4 @@
+interface:
+  display_name: "Presentation"
+  short_description: "Create image or Reveal slide decks"
+  default_prompt: "Use $presentation to create a coherent deck, select image or Reveal mode deliberately, and validate the preview."

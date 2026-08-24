@@ -1,0 +1,8 @@
+# Every active skill in the repository.
+figure-style
+figure-composer
+paper-narrative
+literature-review
+ai-session-export
+online-media
+presentation

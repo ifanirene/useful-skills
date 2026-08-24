@@ -1,0 +1,9 @@
+[submodule "projects/ai_session_export"]
+	path = projects/ai_session_export
+	url = https://github.com/grapeot/ai_session_export
+[submodule "projects/online_media_skill"]
+	path = projects/online_media_skill
+	url = https://github.com/grapeot/online-media-skill.git
+[submodule "projects/presentation_skill"]
+	path = projects/presentation_skill
+	url = https://github.com/grapeot/presentation_skill.git

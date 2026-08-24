@@ -1,0 +1,2 @@
+# AI session export only; used to expose exactly one root Skill.
+ai-session-export

@@ -1,65 +1,126 @@
-# Useful Scientific Research Skills
+# Central Personal Skill Library
 
-These are Anthropic-authored, portable SKILL.md-format skills (folder + YAML-frontmatter
-Markdown + optional sidecar script). This is the same open convention used by
-Claude Code, Codex CLI, Cursor, and other coding agents, so no format conversion
-is needed.
+This is my shared personal Skill repository for Codex, Claude Code, Cursor, OpenCode, and
+other Agents that can read Markdown workflows.
 
-## Install into Claude Code
+The repository borrows the root-routing pattern from
+[`grapeot/context-infrastructure`](https://github.com/grapeot/context-infrastructure), but
+contains only reusable capabilities. Personal memory, credentials, machine paths, and private
+project context stay outside the public registry.
 
-- Personal (all projects): copy each skill folder into `~/.claude/skills/<skill-name>/`
-- Project-scoped (shared via git): copy into `.claude/skills/<skill-name>/`
+## Start here
 
-Claude Code watches these directories for changes; edits typically apply within
-the current session. Creating a brand-new top-level `skills/` directory that
-didn't exist at session start requires a restart. Verify with `/skills`.
+- Agent router: [`AGENTS.md`](AGENTS.md)
+- Human-readable Skill index: [`skills/INDEX.md`](skills/INDEX.md)
+- Canonical machine-readable registry: [`manifest.json`](manifest.json)
+- Project integration: [`docs/PROJECT_INTEGRATION.md`](docs/PROJECT_INTEGRATION.md)
+- Architecture: [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)
+- Local overlay contract: [`docs/LOCAL_OVERLAYS.md`](docs/LOCAL_OVERLAYS.md)
+- Sidecar portability: [`docs/PORTABILITY.md`](docs/PORTABILITY.md)
 
-## Install into Codex CLI
+## Skills
 
-- Global: copy each skill folder into `~/.codex/skills/<skill-name>/`
-- Project: copy into `.codex/skills/<skill-name>/`
+| Skill | Purpose |
+| --- | --- |
+| [`figure-style`](skills/figure-style/SKILL.md) | Correct, legible, publication-grade standalone scientific plots |
+| [`figure-composer`](skills/figure-composer/SKILL.md) | Multi-panel scientific figure planning, composition, and review |
+| [`paper-narrative`](skills/paper-narrative/SKILL.md) | Editorial review of a paper's complete figure story |
+| [`literature-review`](skills/literature-review/SKILL.md) | Verifiable scientific literature search and synthesis |
+| [`ai-session-export`](skills/ai-session-export/SKILL.md) | Export local AI coding sessions to a private Markdown archive |
+| [`online-media`](skills/online-media/SKILL.md) | Route permitted media download, transcription, source identification, metadata, deduplication, and bilingual subtitle workflows |
+| [`presentation`](skills/presentation/SKILL.md) | Create image-rendered or Reveal.js decks with speaker notes, preview, and validation |
 
-Codex loads skills at startup and matches them to your prompt via the
-`description` field in SKILL.md frontmatter. On some Codex builds skills are
-still gated behind a feature flag (`codex --enable skills`) -- check your
-version if the skill doesn't show up in `/skills`.
+`manifest.json` is the source of truth for Skill identity, path, category, source, pinned
+upstream commit, and status. This table and `skills/INDEX.md` are human-readable projections.
 
-## Important: the `kernel.py` sidecar
+## Use from any project
 
-Each skill folder includes a `kernel.py` alongside `SKILL.md`. On the platform
-these were exported from, `kernel.py` is auto-loaded into the live Python
-kernel the moment the skill is loaded -- its functions (e.g.
-`apply_figure_style()`) become directly callable with no import statement.
+The lightest integration is a reference from the project's `AGENTS.md`. Copy the block in
+[`templates/AGENTS.skill-library.md`](templates/AGENTS.skill-library.md) and replace the
+placeholder with the checkout path on that machine. Claude Code projects can import the same
+policy from `CLAUDE.md`:
 
-Claude Code and Codex do NOT have that auto-injection mechanism. They will
-read `SKILL.md` as instructions but won't automatically execute `kernel.py`
-into a persistent kernel. To get equivalent behavior there, either:
+```markdown
+@AGENTS.md
+```
 
-1. Add a line near the top of `SKILL.md` telling the agent to run
-   `python -c "from kernel import *; ..."` (or `exec(open('kernel.py').read())`)
-   in its own code-execution tool before using any helper function, or
-2. Have the agent read `kernel.py` and inline the relevant helper function
-   definitions directly when it writes plotting code.
+For Agent-native discovery, preview and apply a small profile:
 
-The Markdown guidance in each SKILL.md (data fidelity checks, label rules,
-chart-choice logic, etc.) applies as-is regardless of language/tool -- only the
-"auto-loaded helper functions" convenience needs this manual bridge.
+```bash
+python3 scripts/link_skills.py --profile research --agent all
+python3 scripts/link_skills.py --profile research --agent all --apply
+```
 
-## Skills included
+The online-media integration deliberately exposes one root Skill only:
 
-- `figure-style/`      - single-plot publication-grade correctness rules + helpers
-- `figure-composer/`   - multi-panel figure composition workflow
-- `paper-narrative/`   - whole-paper figure arc / narrative review workflow
-- `literature-review/` - source-grounded scientific literature search and synthesis
+```bash
+python3 scripts/link_skills.py --profile online-media --agent all
+python3 scripts/link_skills.py --profile online-media --agent all --apply
+```
 
-## Adding a skill
+Presentation authoring follows the same one-root pattern:
 
-1. Add a directory named after the skill.
-2. Include a `SKILL.md` with YAML frontmatter containing at least `name` and
-   `description`.
-3. Add any sidecar scripts or templates in the same directory.
-4. Record the skill's origin and tracked files in `manifest.json`.
-5. Add the skill to the list above.
+```bash
+python3 scripts/link_skills.py --profile presentation --agent all
+python3 scripts/link_skills.py --profile presentation --agent all --apply
+```
 
-Do not commit generated files, credentials, private data, or licensed material
-that cannot be redistributed.
+The linker creates per-Skill symbolic links and refuses to replace real directories or links
+to other sources.
+
+## Standalone upstream projects
+
+Substantial tools remain in their own repositories and are pinned under `projects/` as Git
+submodules. A small adapter under `skills/` is the only discoverable root. This keeps one
+canonical upstream codebase while preventing every focused internal workflow from crowding
+the Agent Skill catalog.
+
+Initialize pinned projects after cloning:
+
+```bash
+git submodule update --init --recursive
+```
+
+## Private local configuration
+
+Use `.local/<skill-name>/` for private aliases, machine paths, credentials, and runtime
+artifacts. The entire `.local/` tree is ignored and excluded from public-content validation.
+Never copy its values into public Skills, documentation, review packets, or command output.
+
+## Repository layout
+
+```text
+useful-skills/
+├── AGENTS.md                 # Canonical Agent router
+├── CLAUDE.md                 # Claude Code import of the router
+├── manifest.json             # Canonical registry
+├── skills/                   # One discoverable root per registered Skill
+│   ├── INDEX.md
+│   └── <skill>/SKILL.md
+├── projects/                 # Pinned standalone upstream projects
+├── profiles/                 # Small discovery selections
+├── templates/                # Project integration templates
+├── docs/                     # Architecture and governance
+├── scripts/                  # Linking and validation tools
+├── .local/                   # Ignored private overlays
+└── .github/workflows/        # Registry consistency checks
+```
+
+## Change a Skill
+
+1. Work on a review branch.
+2. Update the canonical Skill or pinned upstream project.
+3. Synchronize `manifest.json`, `skills/INDEX.md`, relevant profiles, `README.md`, and
+   `CHANGELOG.md`.
+4. Run:
+
+   ```bash
+   python3 scripts/check_registry.py
+   python3 scripts/check_public_content.py
+   git diff --check
+   ```
+
+5. Obtain explicit functional and privacy approval before merging.
+
+Do not commit credentials, private data, machine-specific paths, customer information,
+unpublished research data, or material that cannot be redistributed.

@@ -1,0 +1,5 @@
+# General scientific research profile.
+literature-review
+paper-narrative
+figure-style
+figure-composer

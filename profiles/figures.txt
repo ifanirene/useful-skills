@@ -1,0 +1,4 @@
+# Scientific figure creation and paper-level figure narrative.
+figure-style
+figure-composer
+paper-narrative

@@ -1,30 +1,201 @@
 {
-  "figure-style": {
-    "origin": "anthropic",
-    "files": [
-      "SKILL.md",
-      "kernel.py"
-    ]
+  "schema_version": 1,
+  "repository": {
+    "name": "useful-skills",
+    "owner": "ifanirene",
+    "canonical_url": "https://github.com/ifanirene/useful-skills",
+    "default_branch": "main",
+    "purpose": "Central personal skill library shared across AI agents"
   },
-  "figure-composer": {
-    "origin": "anthropic",
-    "files": [
-      "SKILL.md",
-      "kernel.py"
-    ]
+  "policy": {
+    "canonical_content_root": "skills",
+    "registry_source_of_truth": "manifest.json",
+    "private_context_allowed": false,
+    "promotion_requires_human_review": true,
+    "generated_links_are_committed": false
   },
-  "paper-narrative": {
-    "origin": "anthropic",
-    "files": [
-      "SKILL.md",
-      "kernel.py"
-    ]
-  },
-  "literature-review": {
-    "origin": "anthropic",
-    "files": [
-      "SKILL.md",
-      "kernel.py"
-    ]
-  }
+  "skills": [
+    {
+      "name": "figure-style",
+      "path": "skills/figure-style",
+      "entrypoint": "SKILL.md",
+      "category": "scientific-visualization",
+      "description": "Create and review correct, legible, publication-grade standalone scientific plots.",
+      "status": "active",
+      "license": "Apache-2.0",
+      "canonical_url": "https://github.com/ifanirene/useful-skills/tree/main/skills/figure-style",
+      "source": {
+        "type": "imported",
+        "provider": "Anthropic",
+        "upstream_url": null,
+        "review_note": "Imported before registry conversion; the precise upstream URL still needs owner confirmation."
+      },
+      "compatibility": [
+        "agent-skills",
+        "claude-code",
+        "codex"
+      ],
+      "files": [
+        "SKILL.md",
+        "kernel.py"
+      ]
+    },
+    {
+      "name": "figure-composer",
+      "path": "skills/figure-composer",
+      "entrypoint": "SKILL.md",
+      "category": "scientific-visualization",
+      "description": "Plan, render, compose, and review a publication-grade multi-panel scientific figure.",
+      "status": "active",
+      "license": "Apache-2.0",
+      "canonical_url": "https://github.com/ifanirene/useful-skills/tree/main/skills/figure-composer",
+      "source": {
+        "type": "imported",
+        "provider": "Anthropic",
+        "upstream_url": null,
+        "review_note": "Imported before registry conversion; the precise upstream URL still needs owner confirmation."
+      },
+      "compatibility": [
+        "agent-skills",
+        "claude-code",
+        "codex"
+      ],
+      "files": [
+        "SKILL.md",
+        "kernel.py"
+      ]
+    },
+    {
+      "name": "paper-narrative",
+      "path": "skills/paper-narrative",
+      "entrypoint": "SKILL.md",
+      "category": "scientific-writing",
+      "description": "Review and reshape the narrative arc carried by a paper's complete figure set.",
+      "status": "active",
+      "license": "Apache-2.0",
+      "canonical_url": "https://github.com/ifanirene/useful-skills/tree/main/skills/paper-narrative",
+      "source": {
+        "type": "imported",
+        "provider": "Anthropic",
+        "upstream_url": null,
+        "review_note": "Imported before registry conversion; the precise upstream URL still needs owner confirmation."
+      },
+      "compatibility": [
+        "agent-skills",
+        "claude-code",
+        "codex"
+      ],
+      "files": [
+        "SKILL.md",
+        "kernel.py"
+      ]
+    },
+    {
+      "name": "literature-review",
+      "path": "skills/literature-review",
+      "entrypoint": "SKILL.md",
+      "category": "scientific-research",
+      "description": "Find, verify, compare, and synthesize scientific literature without fabricated citations.",
+      "status": "active",
+      "license": "Apache-2.0",
+      "canonical_url": "https://github.com/ifanirene/useful-skills/tree/main/skills/literature-review",
+      "source": {
+        "type": "imported",
+        "provider": "Anthropic",
+        "upstream_url": null,
+        "review_note": "Imported before registry conversion; the precise upstream URL still needs owner confirmation."
+      },
+      "compatibility": [
+        "agent-skills",
+        "claude-code",
+        "codex"
+      ],
+      "files": [
+        "SKILL.md",
+        "kernel.py"
+      ]
+    },
+    {
+      "name": "ai-session-export",
+      "path": "skills/ai-session-export",
+      "entrypoint": "SKILL.md",
+      "category": "developer-productivity",
+      "description": "Export local AI coding sessions from supported tools into a private, unified Markdown archive.",
+      "status": "active",
+      "license": "MIT",
+      "canonical_url": "https://github.com/ifanirene/useful-skills/tree/main/skills/ai-session-export",
+      "source": {
+        "type": "adapter",
+        "provider": "grapeot",
+        "upstream_url": "https://github.com/grapeot/ai_session_export",
+        "upstream_commit": "e52754dfe11b7da74b64ec9cf8035c82beb94e56",
+        "project_path": "projects/ai_session_export",
+        "upstream_entrypoint": "skill.md",
+        "review_note": "The upstream README declares MIT, but the pinned commit does not contain a standalone license file."
+      },
+      "compatibility": [
+        "agent-skills",
+        "claude-code",
+        "codex"
+      ],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "online-media",
+      "path": "skills/online-media",
+      "entrypoint": "SKILL.md",
+      "category": "media-processing",
+      "description": "Route permitted online media download, transcription, source identification, metadata, library deduplication, and bilingual subtitle workflows.",
+      "status": "active",
+      "license": "MIT",
+      "canonical_url": "https://github.com/ifanirene/useful-skills/tree/main/skills/online-media",
+      "source": {
+        "type": "adapter",
+        "provider": "grapeot",
+        "upstream_url": "https://github.com/grapeot/online-media-skill",
+        "upstream_commit": "794ff6c5545da5cbdfcc0b0ff785379fb983380e",
+        "project_path": "projects/online_media_skill",
+        "upstream_entrypoint": "skills/online_media.md",
+        "review_note": "Pinned upstream project with one Agent-Skills adapter; focused upstream Markdown workflows remain internal and are not separately projected."
+      },
+      "compatibility": [
+        "agent-skills",
+        "claude-code",
+        "codex"
+      ],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "presentation",
+      "path": "skills/presentation",
+      "entrypoint": "SKILL.md",
+      "category": "presentation-authoring",
+      "description": "Create and revise image-rendered or Reveal.js presentation decks with deliberate mode selection, speaker notes, preview, and validation.",
+      "status": "active",
+      "license": "MIT",
+      "canonical_url": "https://github.com/ifanirene/useful-skills/tree/main/skills/presentation",
+      "source": {
+        "type": "adapter",
+        "provider": "grapeot",
+        "upstream_url": "https://github.com/grapeot/presentation_skill",
+        "upstream_commit": "f9881ad99400994134b5cff989093e30bc9f2d79",
+        "project_path": "projects/presentation_skill",
+        "upstream_entrypoint": "skills/skill_presentation.md",
+        "review_note": "Pinned upstream project with one Agent-Skills adapter; supporting upstream presentation workflows remain internal and are not separately projected."
+      },
+      "compatibility": [
+        "agent-skills",
+        "claude-code",
+        "codex"
+      ],
+      "files": [
+        "SKILL.md",
+        "agents/openai.yaml"
+      ]
+    }
+  ]
 }
