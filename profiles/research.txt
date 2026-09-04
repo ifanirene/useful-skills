@@ -1,5 +1,6 @@
 # General scientific research profile.
 literature-review
+research-paper-analysis-writing
 paper-narrative
 figure-style
 figure-composer

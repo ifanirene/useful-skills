@@ -26,7 +26,15 @@ project context stay outside the public registry.
 | [`figure-composer`](skills/figure-composer/SKILL.md) | Multi-panel scientific figure planning, composition, and review |
 | [`paper-narrative`](skills/paper-narrative/SKILL.md) | Editorial review of a paper's complete figure story |
 | [`literature-review`](skills/literature-review/SKILL.md) | Verifiable scientific literature search and synthesis |
+| [`research-paper-analysis-writing`](skills/research-paper-analysis-writing/SKILL.md) | Reader-first technical paper analysis with evidence layers and ecosystem positioning |
+| [`ai-programming-mindset`](skills/ai-programming-mindset/SKILL.md) | Diagnose feedback, verification, and orchestration gaps in AI-assisted engineering |
+| [`skill-writing-principles`](skills/skill-writing-principles/SKILL.md) | Design outcome-driven, bounded, and testable Agent Skill instructions |
+| [`show-me`](skills/show-me/SKILL.md) | Explain structure, flow, and change with concise visual forms |
+| [`writing-workflows`](skills/writing-workflows/SKILL.md) | Internal memos, external analytical articles, and article distribution posts |
+| [`innovation-assistant`](skills/innovation-assistant/SKILL.md) | Structured SIT or Think Bigger ideation with auditable derivation chains |
+| [`image-generation`](skills/image-generation/SKILL.md) | Generate, edit, or upscale local images through Gemini or OpenAI provider APIs |
 | [`ai-session-export`](skills/ai-session-export/SKILL.md) | Export local AI coding sessions to a private Markdown archive |
+| [`ai-session-search-archive`](skills/ai-session-search-archive/SKILL.md) | Find prior AI sessions in an existing private Markdown archive |
 | [`online-media`](skills/online-media/SKILL.md) | Route permitted media download, transcription, source identification, metadata, deduplication, and bilingual subtitle workflows |
 | [`presentation`](skills/presentation/SKILL.md) | Create image-rendered or Reveal.js decks with speaker notes, preview, and validation |
 
@@ -63,6 +71,27 @@ Presentation authoring follows the same one-root pattern:
 ```bash
 python3 scripts/link_skills.py --profile presentation --agent all
 python3 scripts/link_skills.py --profile presentation --agent all --apply
+```
+
+Structured innovation also exposes only its upstream root router:
+
+```bash
+python3 scripts/link_skills.py --profile innovation-assistant --agent all
+python3 scripts/link_skills.py --profile innovation-assistant --agent all --apply
+```
+
+Provider-selectable local image generation follows the same one-root pattern:
+
+```bash
+python3 scripts/link_skills.py --profile image-generation --agent all
+python3 scripts/link_skills.py --profile image-generation --agent all --apply
+```
+
+General internal and external writing also uses one root router:
+
+```bash
+python3 scripts/link_skills.py --profile writing-workflows --agent all
+python3 scripts/link_skills.py --profile writing-workflows --agent all --apply
 ```
 
 The linker creates per-Skill symbolic links and refuses to replace real directories or links

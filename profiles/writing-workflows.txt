@@ -1,0 +1,2 @@
+# One Writing Workflows root; focused language files and the lint CLI remain upstream.
+writing-workflows

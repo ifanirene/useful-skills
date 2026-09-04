@@ -1,0 +1,4 @@
+interface:
+  display_name: "Innovation Assistant"
+  short_description: "Run structured SIT or Think Bigger ideation"
+  default_prompt: "Use $innovation-assistant to route my problem and run a structured, auditable innovation workflow."

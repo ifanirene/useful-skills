@@ -1,0 +1,4 @@
+interface:
+  display_name: "Image Generation"
+  short_description: "Generate, edit, or upscale local images"
+  default_prompt: "Use $image-generation to create or modify a local image with explicit provider and output controls."

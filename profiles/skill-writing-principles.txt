@@ -1,0 +1,2 @@
+# Outcome-driven content design and review for reusable Agent Skills.
+skill-writing-principles

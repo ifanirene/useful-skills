@@ -1,0 +1,2 @@
+# One root for reader-first analysis and writing of one paper or a tightly related small set.
+research-paper-analysis-writing

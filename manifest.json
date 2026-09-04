@@ -116,6 +116,111 @@
       ]
     },
     {
+      "name": "research-paper-analysis-writing",
+      "path": "skills/research-paper-analysis-writing",
+      "entrypoint": "SKILL.md",
+      "category": "scientific-writing",
+      "description": "Research and write a reader-first technical analysis of one or a small set of scientific papers with explicit evidence layers and ecosystem positioning.",
+      "status": "active",
+      "license": "MIT",
+      "canonical_url": "https://github.com/ifanirene/useful-skills/tree/main/skills/research-paper-analysis-writing",
+      "source": {
+        "type": "imported",
+        "provider": "grapeot",
+        "upstream_url": "https://github.com/grapeot/context-infrastructure/blob/main/rules/skills/workflow_research_paper_survey_writing.md",
+        "upstream_commit": "3f62b8b57f04d6a248770298b797ad38208db2d5",
+        "upstream_entrypoint": "rules/skills/workflow_research_paper_survey_writing.md",
+        "review_note": "Adapted from one instruction-only Markdown workflow into Agent Skills format. Tool-specific and stale internal references were removed. The upstream README declares MIT, but the repository has no standalone license file."
+      },
+      "compatibility": [
+        "agent-skills",
+        "claude-code",
+        "codex"
+      ],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "ai-programming-mindset",
+      "path": "skills/ai-programming-mindset",
+      "entrypoint": "SKILL.md",
+      "category": "agent-engineering",
+      "description": "Diagnose feedback, success-criteria, verification, and orchestration gaps that keep AI-assisted engineering at plausible partial completion.",
+      "status": "active",
+      "license": "MIT",
+      "canonical_url": "https://github.com/ifanirene/useful-skills/tree/main/skills/ai-programming-mindset",
+      "source": {
+        "type": "imported",
+        "provider": "grapeot",
+        "upstream_url": "https://github.com/grapeot/context-infrastructure/blob/main/rules/skills/bestpractice_ai_programming_mindset.md",
+        "upstream_commit": "3f62b8b57f04d6a248770298b797ad38208db2d5",
+        "upstream_entrypoint": "rules/skills/bestpractice_ai_programming_mindset.md",
+        "review_note": "Adapted from one instruction-only upstream Markdown file into Agent Skills format. Fixed host-specific prescriptions were generalized to respect the consuming workspace's authority and orchestration model. The upstream README declares MIT, but the repository has no standalone license file."
+      },
+      "compatibility": [
+        "agent-skills",
+        "claude-code",
+        "codex"
+      ],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "skill-writing-principles",
+      "path": "skills/skill-writing-principles",
+      "entrypoint": "SKILL.md",
+      "category": "skill-authoring",
+      "description": "Design and review reusable Agent Skill content for outcome certainty, clear boundaries, testable acceptance criteria, and progressive disclosure.",
+      "status": "active",
+      "license": "MIT",
+      "canonical_url": "https://github.com/ifanirene/useful-skills/tree/main/skills/skill-writing-principles",
+      "source": {
+        "type": "imported",
+        "provider": "grapeot",
+        "upstream_url": "https://github.com/grapeot/context-infrastructure/blob/main/rules/skills/bestpractice_skill_writing.md",
+        "upstream_commit": "3f62b8b57f04d6a248770298b797ad38208db2d5",
+        "upstream_entrypoint": "rules/skills/bestpractice_skill_writing.md",
+        "review_note": "Adapted from one instruction-only upstream Markdown file into Agent Skills format. Its content-design guidance is separated from host-specific packaging and validation handled by the current skill-creation tooling. The upstream README declares MIT, but the repository has no standalone license file."
+      },
+      "compatibility": [
+        "agent-skills",
+        "claude-code",
+        "codex"
+      ],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "show-me",
+      "path": "skills/show-me",
+      "entrypoint": "SKILL.md",
+      "category": "visual-communication",
+      "description": "Explain structure, flow, change, and tradeoffs with concise diagrams, code-shape sketches, or focused HTML artifacts.",
+      "status": "active",
+      "license": "MIT",
+      "canonical_url": "https://github.com/ifanirene/useful-skills/tree/main/skills/show-me",
+      "source": {
+        "type": "imported",
+        "provider": "HumanLayer",
+        "upstream_url": "https://github.com/humanlayer/skills/blob/main/plugins/show-me/skills/show-me/SKILL.md",
+        "upstream_commit": "3c2629142c5d437428269b1b722b08c0b87f574d",
+        "upstream_entrypoint": "plugins/show-me/skills/show-me/SKILL.md",
+        "review_note": "Adapted from the upstream instruction-only Agent Skill. The visual forms and examples are preserved; the macOS-specific shell opener is replaced with a host-neutral preview rule, and explicit boundaries and acceptance checks are added. The upstream MIT license is included."
+      },
+      "compatibility": [
+        "agent-skills",
+        "claude-code",
+        "codex"
+      ],
+      "files": [
+        "SKILL.md",
+        "LICENSE"
+      ]
+    },
+    {
       "name": "ai-session-export",
       "path": "skills/ai-session-export",
       "entrypoint": "SKILL.md",
@@ -140,6 +245,117 @@
       ],
       "files": [
         "SKILL.md"
+      ]
+    },
+    {
+      "name": "writing-workflows",
+      "path": "skills/writing-workflows",
+      "entrypoint": "SKILL.md",
+      "category": "general-writing",
+      "description": "Draft or revise internal memos, external analytical articles, and article distribution posts using audience- and language-aware workflows.",
+      "status": "active",
+      "license": "MIT",
+      "canonical_url": "https://github.com/ifanirene/useful-skills/tree/main/skills/writing-workflows",
+      "source": {
+        "type": "adapter",
+        "provider": "grapeot",
+        "upstream_url": "https://github.com/grapeot/writing-skill",
+        "upstream_commit": "9f2f6974a143de92c52dc5be1bfd931018a09f39",
+        "project_path": "projects/writing_skill",
+        "upstream_entrypoint": "skills/writing_workflows.md",
+        "review_note": "Pinned upstream project with one Agent-Skills adapter. Chinese is canonical upstream; the adapter routes English output to focused mirrors, corrects one stale CLI module path, and does not expose focused workflows separately."
+      },
+      "compatibility": [
+        "agent-skills",
+        "claude-code",
+        "codex"
+      ],
+      "files": [
+        "SKILL.md",
+        "agents/openai.yaml"
+      ]
+    },
+    {
+      "name": "innovation-assistant",
+      "path": "skills/innovation-assistant",
+      "entrypoint": "SKILL.md",
+      "category": "innovation-methods",
+      "description": "Generate structured innovation candidates for products, services, features, or open problems using SIT or Think Bigger with auditable evidence and derivation chains.",
+      "status": "active",
+      "license": "MIT",
+      "canonical_url": "https://github.com/ifanirene/useful-skills/tree/main/skills/innovation-assistant",
+      "source": {
+        "type": "adapter",
+        "provider": "grapeot",
+        "upstream_url": "https://github.com/grapeot/innovation-assistant-skill",
+        "upstream_commit": "e062b37e67dcd48a79202780802788a675685269",
+        "project_path": "projects/innovation_assistant_skill",
+        "upstream_entrypoint": "skills/innovation_assistant.md",
+        "review_note": "Pinned pure-Markdown upstream project with one Agent-Skills adapter; focused pipelines, axioms, and experiment evidence remain internal and are not separately projected."
+      },
+      "compatibility": [
+        "agent-skills",
+        "claude-code",
+        "codex"
+      ],
+      "files": [
+        "SKILL.md",
+        "agents/openai.yaml"
+      ]
+    },
+    {
+      "name": "ai-session-search-archive",
+      "path": "skills/ai-session-search-archive",
+      "entrypoint": "SKILL.md",
+      "category": "developer-productivity",
+      "description": "Find prior AI coding sessions in a private Markdown archive using source-scoped lexical search and optional semantic fallback.",
+      "status": "active",
+      "license": "MIT",
+      "canonical_url": "https://github.com/ifanirene/useful-skills/tree/main/skills/ai-session-search-archive",
+      "source": {
+        "type": "imported",
+        "provider": "grapeot",
+        "upstream_url": "https://github.com/grapeot/context-infrastructure/blob/main/rules/skills/ai_session_search_archive.md",
+        "upstream_commit": "3f62b8b57f04d6a248770298b797ad38208db2d5",
+        "upstream_entrypoint": "rules/skills/ai_session_search_archive.md",
+        "review_note": "Adapted from one instruction-only upstream Markdown file into the Agent Skills format. The upstream README declares MIT, but the repository has no standalone license file."
+      },
+      "compatibility": [
+        "agent-skills",
+        "claude-code",
+        "codex"
+      ],
+      "files": [
+        "SKILL.md",
+        "agents/openai.yaml"
+      ]
+    },
+    {
+      "name": "image-generation",
+      "path": "skills/image-generation",
+      "entrypoint": "SKILL.md",
+      "category": "media-processing",
+      "description": "Generate, edit, or upscale local image files through a pinned Gemini and OpenAI CLI with explicit provider, model, size, and output controls.",
+      "status": "active",
+      "license": "NOASSERTION",
+      "canonical_url": "https://github.com/ifanirene/useful-skills/tree/main/skills/image-generation",
+      "source": {
+        "type": "adapter",
+        "provider": "grapeot",
+        "upstream_url": "https://github.com/grapeot/image-generation-skill",
+        "upstream_commit": "5c1b2593a628a4f9c78883df90dd00feada256a4",
+        "project_path": "projects/image_generation_skill",
+        "upstream_entrypoint": "skills/skill_image_generation.md",
+        "review_note": "Pinned upstream project with one Agent-Skills adapter. The inspected commit has no license file or package license declaration, so promotion requires explicit human review of reuse terms."
+      },
+      "compatibility": [
+        "agent-skills",
+        "claude-code",
+        "codex"
+      ],
+      "files": [
+        "SKILL.md",
+        "agents/openai.yaml"
       ]
     },
     {

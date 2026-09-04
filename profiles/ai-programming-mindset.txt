@@ -1,0 +1,2 @@
+# Diagnostic principles for AI-assisted engineering feedback and verification loops.
+ai-programming-mindset

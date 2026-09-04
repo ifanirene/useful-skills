@@ -1,0 +1,2 @@
+# Concise visual explanation through diagrams, code-shape sketches, diffs, or focused HTML.
+show-me

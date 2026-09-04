@@ -7,3 +7,12 @@
 [submodule "projects/presentation_skill"]
 	path = projects/presentation_skill
 	url = https://github.com/grapeot/presentation_skill.git
+[submodule "projects/innovation_assistant_skill"]
+	path = projects/innovation_assistant_skill
+	url = https://github.com/grapeot/innovation-assistant-skill.git
+[submodule "projects/image_generation_skill"]
+	path = projects/image_generation_skill
+	url = https://github.com/grapeot/image-generation-skill.git
+[submodule "projects/writing_skill"]
+	path = projects/writing_skill
+	url = https://github.com/grapeot/writing-skill.git

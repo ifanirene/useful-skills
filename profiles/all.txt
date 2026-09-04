@@ -3,6 +3,14 @@ figure-style
 figure-composer
 paper-narrative
 literature-review
+research-paper-analysis-writing
+ai-programming-mindset
+skill-writing-principles
+show-me
+writing-workflows
+innovation-assistant
 ai-session-export
+ai-session-search-archive
+image-generation
 online-media
 presentation

@@ -26,7 +26,19 @@ small and reduces accidental instruction conflicts.
 - One multi-panel scientific figure: `figure-composer`, then `figure-style`
 - A paper's complete figure story: `paper-narrative`, then the figure skills it routes to
 - Scientific literature search or synthesis: `literature-review`
+- Reader-first technical analysis of one or a few scientific papers:
+  `research-paper-analysis-writing`
+- Diagnose stalled or partially complete AI-assisted engineering work:
+  `ai-programming-mindset`
+- Design or review reusable Skill instructions: `skill-writing-principles`
+- Visual explanation with a diagram, code-shape sketch, or focused HTML artifact: `show-me`
+- Internal memos, external analytical articles, or article distribution posts:
+  `writing-workflows`
+- Structured product, service, feature, or open-problem ideation: `innovation-assistant`
+- Provider-selectable local image generation, editing, or upscaling: `image-generation`
 - Export local AI coding sessions to a private Markdown archive: `ai-session-export`
+- Search an existing private Markdown archive of prior AI sessions:
+  `ai-session-search-archive`
 - Online media download, transcription, source identification, metadata, library deduplication,
   or bilingual subtitles: `online-media`
 - Presentation decks, keynotes, teaching slides, speaker notes, or Reveal scaffolds:

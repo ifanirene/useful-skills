@@ -1,0 +1,4 @@
+interface:
+  display_name: "Writing Workflows"
+  short_description: "Write internal memos or external articles"
+  default_prompt: "Use $writing-workflows to route this writing task by audience and produce the appropriate artifact."

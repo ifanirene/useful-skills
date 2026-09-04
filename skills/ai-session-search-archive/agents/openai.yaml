@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI Session Search"
+  short_description: "Find prior sessions in private archives"
+  default_prompt: "Use $ai-session-search-archive to find the relevant prior AI session and show evidence-backed matches."

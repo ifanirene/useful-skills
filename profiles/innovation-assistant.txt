@@ -1,0 +1,2 @@
+# Innovation Assistant root only; pipelines and axioms remain inside the upstream project.
+innovation-assistant

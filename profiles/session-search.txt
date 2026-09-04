@@ -1,0 +1,2 @@
+# Read-only search of an existing private AI-session archive.
+ai-session-search-archive
