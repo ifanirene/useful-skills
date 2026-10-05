@@ -145,6 +145,14 @@ project.
 Use for image-rendered or Reveal.js slide decks, keynotes, teaching decks, speaker notes, or
 previewable presentation scaffolds. Route native PowerPoint editing to a PPTX-capable Skill.
 
+## Remote computing
+
+### [`compute-scg`](compute-scg/SKILL.md)
+
+Use for Stanford SCG onboarding and Slurm CPU/GPU work. Includes a portable SSH
+helper, live account/resource discovery, dated templates and project-environment
+guidance. Lab account and personal path values stay in private overlays.
+
 ## Common combinations
 
 - Standalone plot: `figure-style`

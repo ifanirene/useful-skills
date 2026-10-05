@@ -580,6 +580,39 @@
       "files": [
         "SKILL.md"
       ]
+    },
+    {
+      "name": "compute-scg",
+      "path": "skills/compute-scg",
+      "entrypoint": "SKILL.md",
+      "category": "remote-computing",
+      "description": "Set up SCG SSH access and prepare, size, submit and verify Slurm CPU/GPU jobs with private lab configuration.",
+      "status": "active",
+      "license": "NOASSERTION",
+      "canonical_url": "https://github.com/ifanirene/useful-skills/tree/main/skills/compute-scg",
+      "source": {
+        "type": "original",
+        "provider": "ifanirene",
+        "upstream_url": null,
+        "review_note": "Owner-requested SCG variant of remote-compute-ssh. Bundled helper/test hashes retained; historical Claude Science observations generalized, real account mappings kept in ignored local overlay. No redistribution license assigned. Publication to main explicitly requested 2026-10-05; no live cluster validation."
+      },
+      "compatibility": [
+        "agent-skills",
+        "codex",
+        "claude-code",
+        "opencode",
+        "gemini"
+      ],
+      "files": [
+        "SKILL.md",
+        "references/provenance.json",
+        "references/scg-operations.md",
+        "references/setup.md",
+        "scripts/ssh-connect",
+        "templates/cpu.sbatch",
+        "templates/gpu-p100-smoke.sbatch",
+        "tests/test_connection_helper.py"
+      ]
     }
   ]
 }

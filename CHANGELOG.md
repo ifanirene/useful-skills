@@ -2,6 +2,12 @@
 
 ## 2026-10-05
 
+- Added owner-requested `compute-scg`, an SCG-specific SSH/Slurm skill variant with
+  bundled connection helper, dated CPU/GPU observations, job templates and
+  environment/logging guidance. Real lab accounts remain in an ignored local
+  overlay. Owner explicitly requested publication to main; see
+  `review/compute-scg-2026-10-05.md` for scope and validation limits.
+
 - Repository owner authorized merging the current registry work to main and pushing.
   See `review/merge-2026-10-05.md` for scope, verification, and retained limitations.
 

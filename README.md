@@ -22,6 +22,7 @@ project context stay outside the public registry.
 
 | Skill | Purpose |
 | --- | --- |
+| [`compute-scg`](skills/compute-scg/SKILL.md) | SCG SSH onboarding, Slurm CPU/GPU jobs, resource discovery and project environments |
 | [`intake-skill`](skills/intake-skill/SKILL.md) | Synced Apple Voice Memos transcription and daily reports |
 | [`baoyu-article-illustrator`](skills/baoyu-article-illustrator/SKILL.md) | Scientific and article illustrations with controlled style, palette, and references |
 | [`figure-style`](skills/figure-style/SKILL.md) | Scientific plots with source fidelity and rendered-output checks |

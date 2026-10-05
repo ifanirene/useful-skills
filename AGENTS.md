@@ -22,6 +22,8 @@ small and reduces accidental instruction conflicts.
 
 ## Quick routing
 
+- Stanford SCG SSH setup and Slurm CPU/GPU jobs: `compute-scg`
+
 - Connect and visualize concepts across Markdown, documents, or code: `graphify`
 
 - Synced Apple Voice Memos transcription and daily reports: `intake-skill`

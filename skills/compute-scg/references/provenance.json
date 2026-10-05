@@ -1,0 +1,12 @@
+{
+  "derived_from": "remote-compute-ssh",
+  "derived_on": "2026-10-05",
+  "source_kind": "owner-authored installed skill; no upstream repository URL established",
+  "authorization": "Owner requested compute-scg variant and publication to main.",
+  "license": "NOASSERTION",
+  "note": "No redistribution license assigned; no third-party license invented.",
+  "bundled_source_sha256": {
+    "scripts/ssh-connect": "77842ae0ddd1f7da9acd8485350e000d856e724fb1c57a3b80023904b81fd277",
+    "tests/test_connection_helper.py": "a3a0a7277503f739fa372f39fe0754008d63037a44563247cf1a5d7f1e7aed27"
+  }
+}

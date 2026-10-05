@@ -116,3 +116,9 @@ PyPI distribution `graphifyy==0.9.77`. The runtime declares Apache-2.0 and inclu
 Apache LICENSE, MIT attribution, and NOTICE files. The adapter reads the installed
 package's host workflow and progressive references, rather than copying them.
 Local installation was requested on 2026-10-05; publication and merge review is pending.
+
+`compute-scg` is an owner-requested SCG variant derived from the owner-authored
+`remote-compute-ssh` helper and supplied Claude Science compute notes. Exact
+bundled code hashes are retained in its provenance sidecar. No upstream repository
+URL or redistribution license has been established; recorded as `NOASSERTION`.
+Personal paths and actual lab accounts are retained only in an ignored overlay.
