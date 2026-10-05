@@ -22,6 +22,11 @@ small and reduces accidental instruction conflicts.
 
 ## Quick routing
 
+- Connect and visualize concepts across Markdown, documents, or code: `graphify`
+
+- Synced Apple Voice Memos transcription and daily reports: `intake-skill`
+
+- Scientific mechanisms and article illustrations with controlled style: `baoyu-article-illustrator`
 - One scientific plot or plot QA: `skills/figure-style/SKILL.md`
 - One multi-panel scientific figure: `figure-composer`, then `figure-style`
 - A paper's complete figure story: `paper-narrative`, then the figure skills it routes to
@@ -31,6 +36,7 @@ small and reduces accidental instruction conflicts.
 - Diagnose stalled or partially complete AI-assisted engineering work:
   `ai-programming-mindset`
 - Design or review reusable Skill instructions: `skill-writing-principles`
+- Recurring artistic covers from repository elements and a personal library: `image-dream`
 - Visual explanation with a diagram, code-shape sketch, or focused HTML artifact: `show-me`
 - Internal memos, external analytical articles, or article distribution posts:
   `writing-workflows`

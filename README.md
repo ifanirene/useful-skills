@@ -22,14 +22,20 @@ project context stay outside the public registry.
 
 | Skill | Purpose |
 | --- | --- |
-| [`figure-style`](skills/figure-style/SKILL.md) | Correct, legible, publication-grade standalone scientific plots |
+| [`intake-skill`](skills/intake-skill/SKILL.md) | Synced Apple Voice Memos transcription and daily reports |
+| [`baoyu-article-illustrator`](skills/baoyu-article-illustrator/SKILL.md) | Scientific and article illustrations with controlled style, palette, and references |
+| [`figure-style`](skills/figure-style/SKILL.md) | Scientific plots with source fidelity and rendered-output checks |
 | [`figure-composer`](skills/figure-composer/SKILL.md) | Multi-panel scientific figure planning, composition, and review |
 | [`paper-narrative`](skills/paper-narrative/SKILL.md) | Editorial review of a paper's complete figure story |
-| [`literature-review`](skills/literature-review/SKILL.md) | Verifiable scientific literature search and synthesis |
+| [`literature-review`](skills/literature-review/SKILL.md) | Verified paper lookup, method comparison, and evidence synthesis |
 | [`research-paper-analysis-writing`](skills/research-paper-analysis-writing/SKILL.md) | Reader-first technical paper analysis with evidence layers and ecosystem positioning |
 | [`ai-programming-mindset`](skills/ai-programming-mindset/SKILL.md) | Diagnose feedback, verification, and orchestration gaps in AI-assisted engineering |
 | [`skill-writing-principles`](skills/skill-writing-principles/SKILL.md) | Design outcome-driven, bounded, and testable Agent Skill instructions |
+| [`image-dream`](skills/image-dream/SKILL.md) | Recurring artistic covers from repository elements and a personal or ChatGPT image library |
+| [`graphify`](skills/graphify/SKILL.md) | Connect concepts across Markdown, documents, and code; query and visualize knowledge graphs |
+| [`visual-explainer`](skills/visual-explainer/SKILL.md) | Interactive HTML explanations with diagrams, controls, process steppers, and requested slide decks |
 | [`show-me`](skills/show-me/SKILL.md) | Explain structure, flow, and change with concise visual forms |
+| [`explain-ste100`](skills/explain-ste100/SKILL.md) | Concept explanations and technical English with ASD-STE100 principles and explicit compliance limits |
 | [`writing-workflows`](skills/writing-workflows/SKILL.md) | Internal memos, external analytical articles, and article distribution posts |
 | [`innovation-assistant`](skills/innovation-assistant/SKILL.md) | Structured SIT or Think Bigger ideation with auditable derivation chains |
 | [`image-generation`](skills/image-generation/SKILL.md) | Generate, edit, or upscale local images through Gemini or OpenAI provider APIs |

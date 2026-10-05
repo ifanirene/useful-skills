@@ -1,10 +1,30 @@
 # Changelog
 
+## 2026-10-05
+
+- Repository owner authorized merging the current registry work to main and pushing.
+  See `review/merge-2026-10-05.md` for scope, verification, and retained limitations.
+
+- Added the Graphify package adapter, registry entry, index routing, and discovery profile.
+  The official `graphifyy==0.9.77` runtime stays isolated in its uv tool environment;
+  packaged host workflows and references are loaded without vendoring upstream.
+  Local installation is authorized. Publication and merge review remains pending.
+
+
 All notable registry changes are recorded here.
 
 ## Unreleased
 
 ### Changed
+
+- Apply the documented private-overlay exclusion to public-content symlink checks,
+  including local model-cache links; public repository symlinks remain flagged.
+
+- Streamlined `literature-review` and `figure-style` entrypoints: precise discovery,
+  task-sized evidence gathering, explicit sidecar loading, and conditional figure
+  guidance. Preserved citation grounding, data fidelity, visual inspection, and
+  source/license records. See `review/frequent-skill-instructions.md` for behavior
+  changes and validation limits. Profiles and discovery targets are unchanged.
 
 - Reorganized the four existing skills under the canonical `skills/` root.
 - Converted the repository into a central personal Skill library with a root Agent router,
@@ -12,6 +32,24 @@ All notable registry changes are recorded here.
 - Made the shared/private boundary and human promotion gate explicit.
 
 ### Added
+
+- Pinned `nicobailon/visual-explainer` and added one discoverable adapter and an isolated
+  profile for interactive HTML explanations. Global installation was requested by the owner.
+  Optional upstream tool integrations are not installed.
+
+- Added original `explain-ste100` for concept explanations and technical English drafts
+  and revisions using ASD-STE100 principles. Includes an isolated discovery profile;
+  full rules/dictionary compliance requires the official reference and review.
+
+- Pinned `grapeot/intake-skill` with one discoverable `intake-skill` adapter, a dedicated
+  profile, and a private runtime overlay. Nightly automation remains opt-in.
+
+- Added original `image-dream` for recurring artistic interpretation of repository elements,
+  with ChatGPT Library sourcing, style exploration, private run records, and scheduling guidance.
+  Includes offline occurrence-deduplication and artifact-verification tests.
+
+- Pinned JimLiu/baoyu-skills and exposed only `baoyu-article-illustrator`, with scientific
+  fidelity guidance, an isolated discovery profile, and intact upstream style references.
 
 - Registry and public-content validation scripts with CI coverage.
 - Architecture, project integration, contribution, provenance, and review documentation.

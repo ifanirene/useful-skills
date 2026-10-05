@@ -7,20 +7,26 @@ machine-readable record is [`../manifest.json`](../manifest.json).
 
 ### [`literature-review`](literature-review/SKILL.md)
 
-Use for finding a specific paper, verifying citations, comparing scientific methods, or
-writing a source-grounded literature synthesis.
+Use for a specific-paper lookup, method comparison, or evidence synthesis. Match search
+breadth and output length to the question; verify both citation identity and claim support.
 
 ## Scientific visualization
 
 ### [`figure-style`](figure-style/SKILL.md)
 
-Use for one standalone plot or for checking data fidelity, chart choice, labels, color,
-layout, and publication legibility.
+Use for a scientific plot or figure review. Keep source fidelity and rendered-output checks
+in scope; consult detailed design guidance only for the chart or edit at hand.
 
 ### [`figure-composer`](figure-composer/SKILL.md)
 
 Use for one multi-panel scientific figure. It routes panel work through `figure-style` and
 adds figure-level planning, composition, and adversarial review.
+
+### [`baoyu-article-illustrator`](baoyu-article-illustrator/SKILL.md)
+
+Use for scientific mechanisms, experimental workflows, and article illustrations with
+consistent style, palette, and reference images. Includes a dedicated scientific style.
+Generated schematics require factual and visual review; route quantitative plots to figure-style.
 
 ## Scientific writing
 
@@ -49,14 +55,40 @@ Use to design or review the content of portable Agent Skills for outcome certain
 boundaries, testable acceptance criteria, and progressive disclosure. Pair it with the current
 host's creation tooling for packaging and mechanical validation.
 
+## Knowledge integration
+
+### [`graphify`](graphify/SKILL.md)
+
+Use to build or explore concept graphs across related Markdown files, documents, and code.
+Loads the official installed Python package's host workflow and references. Preserve source
+provenance and distinguish explicit relationships from semantic inferences.
+
 ## Visual communication
+
+### [`visual-explainer`](visual-explainer/SKILL.md)
+
+Use for interactive HTML concept explanations, mechanisms, parameter controls, process
+steppers, and requested slide decks. The adapter loads pinned upstream references and
+templates and preserves factual uncertainty. Use `show-me` for smaller inline diagrams.
 
 ### [`show-me`](show-me/SKILL.md)
 
 Use when a concise diagram, code-shape sketch, diff, or focused HTML artifact would make
 structure, flow, change, or tradeoffs materially easier to understand than prose.
 
+### [`image-dream`](image-dream/SKILL.md)
+
+Use to build an artistic cover series from a repository element and a personal reference
+library, including ChatGPT Library. Supports style exploration, private run history, and
+host-managed scheduling. Use baoyu-article-illustrator for explanatory article illustrations.
+
 ## General writing
+
+### [`explain-ste100`](explain-ste100/SKILL.md)
+
+Use for concept explanations or technical drafts and revisions when the user requests
+ASD-STE100 or STE-style language. Preserve technical meaning and distinguish a draft
+from text reviewed against the complete standard and dictionary.
 
 ### [`writing-workflows`](writing-workflows/SKILL.md)
 
@@ -87,6 +119,11 @@ existing private Markdown archive. It searches named entities lexically before u
 optional semantic fallback.
 
 ## Media processing
+
+### [`intake-skill`](intake-skill/SKILL.md)
+
+Use for synced Apple Voice Memos, local MLX transcription, and Codex daily reports.
+Private data stays in the local overlay; nightly automation is opt-in.
 
 ### [`image-generation`](image-generation/SKILL.md)
 
@@ -119,6 +156,7 @@ previewable presentation scaffolds. Route native PowerPoint editing to a PPTX-ca
 - Stalled AI-assisted implementation: `ai-programming-mindset`
 - Skill content design or review: `skill-writing-principles`
 - Visual explanation: `show-me`
+- Concept explanation in STE: `explain-ste100`
 - Internal memo or external analytical article: `writing-workflows`
 - Structured innovation: `innovation-assistant`
 - Private AI session archive: `ai-session-export`

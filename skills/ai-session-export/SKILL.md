@@ -68,4 +68,3 @@ The upstream tool also supports OpenCode, Claude Code, Antigravity, and Second M
 - Real exports and state are outside public repositories.
 - Output files follow the upstream YAML-frontmatter and alternating User/Assistant contract.
 - Upstream non-live tests pass after code changes.
-

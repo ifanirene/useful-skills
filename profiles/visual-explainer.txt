@@ -1,0 +1,2 @@
+# One visual explanation root; references and tools remain in the pinned project.
+visual-explainer

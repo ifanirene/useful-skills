@@ -1,0 +1,4 @@
+interface:
+  display_name: "Visual Explainer"
+  short_description: "Explain concepts with interactive HTML visuals"
+  default_prompt: "Use $visual-explainer to explain this concept with clear language and an interactive HTML visual."

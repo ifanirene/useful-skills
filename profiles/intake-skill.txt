@@ -1,0 +1,2 @@
+# One root only; upstream workflows remain internal.
+intake-skill

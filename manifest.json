@@ -20,7 +20,7 @@
       "path": "skills/figure-style",
       "entrypoint": "SKILL.md",
       "category": "scientific-visualization",
-      "description": "Create and review correct, legible, publication-grade standalone scientific plots.",
+      "description": "Create or review scientific plots for data fidelity, legibility, and publication-ready output.",
       "status": "active",
       "license": "Apache-2.0",
       "canonical_url": "https://github.com/ifanirene/useful-skills/tree/main/skills/figure-style",
@@ -37,7 +37,8 @@
       ],
       "files": [
         "SKILL.md",
-        "kernel.py"
+        "kernel.py",
+        "references/design-guidance.md"
       ]
     },
     {
@@ -95,7 +96,7 @@
       "path": "skills/literature-review",
       "entrypoint": "SKILL.md",
       "category": "scientific-research",
-      "description": "Find, verify, compare, and synthesize scientific literature without fabricated citations.",
+      "description": "Find and verify scientific papers, compare methods, or synthesize evidence for a literature question.",
       "status": "active",
       "license": "Apache-2.0",
       "canonical_url": "https://github.com/ifanirene/useful-skills/tree/main/skills/literature-review",
@@ -411,6 +412,173 @@
       "files": [
         "SKILL.md",
         "agents/openai.yaml"
+      ]
+    },
+    {
+      "name": "baoyu-article-illustrator",
+      "path": "skills/baoyu-article-illustrator",
+      "entrypoint": "SKILL.md",
+      "category": "scientific-visualization",
+      "description": "Generate scientific and article illustrations with consistent rendering style, palette, and reference guidance.",
+      "status": "active",
+      "license": "MIT",
+      "canonical_url": "https://github.com/ifanirene/useful-skills/tree/main/skills/baoyu-article-illustrator",
+      "source": {
+        "type": "adapter",
+        "provider": "JimLiu",
+        "upstream_url": "https://github.com/JimLiu/baoyu-skills",
+        "upstream_commit": "8ae8c33a8d7c8c7c6de291b2c91ba1debe1d2766",
+        "project_path": "projects/baoyu_skills",
+        "upstream_entrypoint": "skills/baoyu-article-illustrator/SKILL.md",
+        "review_note": "MIT license verified. Only Article Illustrator is exposed; upstream references remain intact. Adapter adds scientific fidelity checks and host-native tool routing. Human functional and privacy review pending."
+      },
+      "compatibility": [
+        "agent-skills",
+        "claude-code",
+        "codex"
+      ],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "image-dream",
+      "path": "skills/image-dream",
+      "entrypoint": "SKILL.md",
+      "category": "visual-communication",
+      "description": "Create recurring artistic cover images grounded in repository elements and a personal or ChatGPT reference library.",
+      "status": "active",
+      "license": "NOASSERTION",
+      "canonical_url": "https://github.com/ifanirene/useful-skills/tree/main/skills/image-dream",
+      "source": {
+        "type": "original",
+        "provider": "ifanirene",
+        "upstream_url": null,
+        "review_note": "Original locally authored workflow requested by the repository owner. Optional existing image-generation and Baoyu capabilities are referenced without copying their implementations. No redistribution license has been assigned; functional and privacy review pending."
+      },
+      "compatibility": [
+        "agent-skills",
+        "claude-code",
+        "codex"
+      ],
+      "files": [
+        "SKILL.md",
+        "agents/openai.yaml",
+        "references/art-direction.md",
+        "references/chatgpt-library.md",
+        "references/configuration.md",
+        "references/scheduling.md",
+        "scripts/dream_runs.py",
+        "scripts/test_dream_runs.py"
+      ]
+    },
+    {
+      "name": "intake-skill",
+      "path": "skills/intake-skill",
+      "entrypoint": "SKILL.md",
+      "category": "media-processing",
+      "description": "Process synced Apple Voice Memos with local MLX transcription and Codex daily reports.",
+      "status": "active",
+      "license": "MIT",
+      "canonical_url": "https://github.com/ifanirene/useful-skills/tree/main/skills/intake-skill",
+      "source": {
+        "type": "adapter",
+        "provider": "grapeot",
+        "upstream_url": "https://github.com/grapeot/intake-skill",
+        "upstream_commit": "830956d107cc0e9fc4849809827d8841b8426837",
+        "project_path": "projects/intake_skill",
+        "upstream_entrypoint": "skills/skill_intake.md",
+        "review_note": "MIT license verified. One root adapter; private runtime state stays in the ignored overlay. Functional and privacy review pending."
+      },
+      "compatibility": [
+        "agent-skills",
+        "claude-code",
+        "codex"
+      ],
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    {
+      "name": "explain-ste100",
+      "path": "skills/explain-ste100",
+      "entrypoint": "SKILL.md",
+      "category": "general-writing",
+      "description": "Explain concepts and draft or revise technical English with ASD-STE100 principles while preserving meaning and reporting compliance limits.",
+      "status": "active",
+      "license": "NOASSERTION",
+      "canonical_url": "https://github.com/ifanirene/useful-skills/tree/main/skills/explain-ste100",
+      "source": {
+        "type": "original",
+        "provider": "ifanirene",
+        "upstream_url": null,
+        "review_note": "Original workflow requested by the repository owner. Selected STE guidance is paraphrased from official ASD sources linked in SKILL.md; the full standard and dictionary are not bundled. No redistribution license has been assigned to this original skill. Human functional and privacy review pending."
+      },
+      "compatibility": [
+        "agent-skills",
+        "claude-code",
+        "codex"
+      ],
+      "files": [
+        "SKILL.md",
+        "agents/openai.yaml"
+      ]
+    },
+    {
+      "name": "visual-explainer",
+      "path": "skills/visual-explainer",
+      "entrypoint": "SKILL.md",
+      "category": "visual-communication",
+      "description": "Explain technical concepts and mechanisms with interactive HTML diagrams, controls, process steppers, and requested slide decks.",
+      "status": "active",
+      "license": "MIT",
+      "canonical_url": "https://github.com/ifanirene/useful-skills/tree/main/skills/visual-explainer",
+      "source": {
+        "type": "adapter",
+        "provider": "nicobailon",
+        "upstream_url": "https://github.com/nicobailon/visual-explainer",
+        "upstream_commit": "5846f5aef34a23c8fea389d2f23ce56224cbf840",
+        "project_path": "projects/visual_explainer",
+        "upstream_entrypoint": "plugins/visual-explainer/SKILL.md",
+        "review_note": "MIT license verified. Pinned upstream retained intact; one adapter adds host-neutral preview, scope control, and scientific uncertainty preservation. Global installation explicitly requested; human functional and privacy review required before merge."
+      },
+      "compatibility": [
+        "agent-skills",
+        "claude-code",
+        "codex"
+      ],
+      "files": [
+        "SKILL.md",
+        "agents/openai.yaml"
+      ]
+    },
+    {
+      "name": "graphify",
+      "path": "skills/graphify",
+      "entrypoint": "SKILL.md",
+      "category": "knowledge-management",
+      "description": "Connect and visualize concepts across Markdown, documents, and code with queryable knowledge graphs.",
+      "status": "active",
+      "license": "Apache-2.0",
+      "canonical_url": "https://github.com/ifanirene/useful-skills/tree/main/skills/graphify",
+      "source": {
+        "type": "package-adapter",
+        "provider": "Graphify-Labs",
+        "upstream_url": "https://github.com/Graphify-Labs/graphify",
+        "package": "graphifyy",
+        "package_version": "0.9.77",
+        "upstream_entrypoint": "graphify/skill-codex.md",
+        "review_note": "Official PyPI runtime installed in an isolated uv tool environment. Adapter loads packaged host workflows and references without vendoring or modifying upstream. Apache-2.0 license and bundled MIT attribution verified. Local installation authorized; functional and privacy review remains required before publication or merge."
+      },
+      "compatibility": [
+        "agent-skills",
+        "codex",
+        "claude-code",
+        "opencode",
+        "gemini"
+      ],
+      "files": [
+        "SKILL.md"
       ]
     }
   ]

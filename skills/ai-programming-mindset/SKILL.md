@@ -82,4 +82,3 @@ their values into the public Skill or registry.
 - Iteration responds to observed failures rather than repeating the same plan.
 - Persistent state is auditable and uses the system's canonical store.
 - Private configuration and diagnostic secrets remain outside public content.
-

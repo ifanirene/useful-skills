@@ -101,7 +101,7 @@ def main() -> int:
     symlinks = [
         path.relative_to(REPO)
         for path in REPO.rglob("*")
-        if ".git" not in path.relative_to(REPO).parts
+        if not {".git", ".local"}.intersection(path.relative_to(REPO).parts)
         and not inside_submodule(path.relative_to(REPO), roots)
         and path.is_symlink()
     ]

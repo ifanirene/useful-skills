@@ -16,3 +16,12 @@
 [submodule "projects/writing_skill"]
 	path = projects/writing_skill
 	url = https://github.com/grapeot/writing-skill.git
+[submodule "projects/baoyu_skills"]
+	path = projects/baoyu_skills
+	url = https://github.com/JimLiu/baoyu-skills.git
+[submodule "projects/intake_skill"]
+	path = projects/intake_skill
+	url = https://github.com/grapeot/intake-skill
+[submodule "projects/visual_explainer"]
+	path = projects/visual_explainer
+	url = https://github.com/nicobailon/visual-explainer.git

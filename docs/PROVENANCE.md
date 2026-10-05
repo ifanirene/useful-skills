@@ -83,3 +83,36 @@ canonical root router, synchronized focused English mirrors, and a Chinese-prima
 The central English adapter performs language-aware routing and is the only root projected
 into Agent discovery; focused workflows, private voice material, drafts, and publishing
 configuration are not separately exposed.
+
+`baoyu-article-illustrator` is an adapter to JimLiu/baoyu-skills at
+`8ae8c33a8d7c8c7c6de291b2c91ba1debe1d2766`. The upstream root LICENSE declares
+MIT, copyright 2026 Jim Liu. Its full repository remains pinned as a submodule; only the
+Article Illustrator entrypoint is exposed. Supporting styles and preferences remain upstream.
+The adapter adds scientific fidelity checks and respects actual host tool contracts.
+
+`image-dream` is an original workflow authored in this repository. It optionally routes to
+existing image-generation capabilities and Baoyu references without vendoring their content.
+Its art-direction recipes and run-state helper are original. No redistribution license is
+assigned yet (`NOASSERTION`); human functional and privacy review remains pending.
+
+`intake-skill` routes to `grapeot/intake-skill` at
+`830956d107cc0e9fc4849809827d8841b8426837`, under the upstream MIT LICENSE
+(copyright 2026 intake_skill contributors). The upstream implementation is unchanged
+and pinned as a submodule. Only the central adapter is exposed. The adapter requires
+private runtime storage and explicit authorization for optional nightly automation.
+
+`explain-ste100` is an original concept-explanation and technical-writing workflow.
+Its selected STE guidance is paraphrased from official ASD sources linked in the Skill.
+The ASD-owned standard and dictionary are not bundled. No redistribution license has
+been assigned to the original Skill; functional and privacy review is pending.
+
+`visual-explainer` adapts `nicobailon/visual-explainer` at `5846f5aef34a23c8fea389d2f23ce56224cbf840`.
+The upstream MIT license is copyright 2025 Nico Bailon. The pinned implementation,
+references, templates, and optional tools stay intact in the submodule; only the adapter
+is projected globally. Functional and privacy review remains required before merge.
+
+`graphify` is a package adapter to `Graphify-Labs/graphify`, using the official
+PyPI distribution `graphifyy==0.9.77`. The runtime declares Apache-2.0 and includes
+Apache LICENSE, MIT attribution, and NOTICE files. The adapter reads the installed
+package's host workflow and progressive references, rather than copying them.
+Local installation was requested on 2026-10-05; publication and merge review is pending.

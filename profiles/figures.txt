@@ -2,3 +2,4 @@
 figure-style
 figure-composer
 paper-narrative
+baoyu-article-illustrator

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Image Dream"
+  short_description: "Recurring artistic images inspired by your work"
+  default_prompt: "Use $image-dream to turn a repository element and my image library into an artistic cover series."

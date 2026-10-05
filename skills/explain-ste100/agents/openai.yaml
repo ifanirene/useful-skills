@@ -1,0 +1,4 @@
+interface:
+  display_name: "Explain with STE"
+  short_description: "Explain concepts and write clear technical English"
+  default_prompt: "Use $explain-ste100 to explain this concept in ASD-STE100 style for a reader who is new to the subject."

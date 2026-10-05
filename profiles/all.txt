@@ -14,3 +14,9 @@ ai-session-search-archive
 image-generation
 online-media
 presentation
+baoyu-article-illustrator
+image-dream
+intake-skill
+explain-ste100
+visual-explainer
+graphify
