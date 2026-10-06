@@ -71,7 +71,7 @@
       "path": "skills/paper-narrative",
       "entrypoint": "SKILL.md",
       "category": "scientific-writing",
-      "description": "Review and reshape the narrative arc carried by a paper's complete figure set.",
+      "description": "Make any research writing read as one question, one answer, and linked steps, by polishing the author's draft or rewriting it for delivery.",
       "status": "active",
       "license": "Apache-2.0",
       "canonical_url": "https://github.com/ifanirene/useful-skills/tree/main/skills/paper-narrative",
@@ -79,7 +79,7 @@
         "type": "imported",
         "provider": "Anthropic",
         "upstream_url": null,
-        "review_note": "Imported before registry conversion; the precise upstream URL still needs owner confirmation."
+        "review_note": "Imported before registry conversion; the precise upstream URL still needs owner confirmation. Locally modified on 2026-10-05: two modes (polish, rewrite) for any research writing, a shared question-first narrative brief with a pure-Python checker, and an optional two-lens figure review offered afterward; see review/paper-narrative-2026-10-05.md."
       },
       "compatibility": [
         "agent-skills",
@@ -88,7 +88,8 @@
       ],
       "files": [
         "SKILL.md",
-        "kernel.py"
+        "kernel.py",
+        "references/figure-review.md"
       ]
     },
     {

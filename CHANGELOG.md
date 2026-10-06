@@ -2,6 +2,19 @@
 
 ## 2026-10-05
 
+- Owner-requested update to `paper-narrative`: the skill now applies to any research
+  writing through two modes, `polish` (structure and clarity edits that keep the author's
+  voice, with a change list) and `rewrite` (reorganize for delivery); one shared narrative
+  brief (question, message, linked steps with grounding and evidence strength);
+  pure-Python `check_narrative_brief`; a cold-read acceptance check; output in the input's
+  format, with self-contained interactive HTML on request; and the figure-deck review
+  reframed as an optional follow-up offered when the input has figures, with two lenses
+  (editor plus broad reader), candidate framings, and a bounded convergence rule
+  (`references/figure-review.md`). `derive_paper_brief` and `paper_brief_schema` are
+  renamed `derive_figure_brief` and `figure_brief_schema`. See
+  `review/paper-narrative-2026-10-05.md`. Owner requested the push to main on 2026-10-06;
+  no end-to-end `polish` or `rewrite` run has been recorded yet.
+
 - Added owner-requested `compute-scg`, an SCG-specific SSH/Slurm skill variant with
   bundled connection helper, dated CPU/GPU observations, job templates and
   environment/logging guidance. Real lab accounts remain in an ignored local

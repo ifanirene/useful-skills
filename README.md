@@ -27,7 +27,7 @@ project context stay outside the public registry.
 | [`baoyu-article-illustrator`](skills/baoyu-article-illustrator/SKILL.md) | Scientific and article illustrations with controlled style, palette, and references |
 | [`figure-style`](skills/figure-style/SKILL.md) | Scientific plots with source fidelity and rendered-output checks |
 | [`figure-composer`](skills/figure-composer/SKILL.md) | Multi-panel scientific figure planning, composition, and review |
-| [`paper-narrative`](skills/paper-narrative/SKILL.md) | Editorial review of a paper's complete figure story |
+| [`paper-narrative`](skills/paper-narrative/SKILL.md) | Question-first narrative for any research writing: `polish` the author's draft or `rewrite` it for delivery |
 | [`literature-review`](skills/literature-review/SKILL.md) | Verified paper lookup, method comparison, and evidence synthesis |
 | [`research-paper-analysis-writing`](skills/research-paper-analysis-writing/SKILL.md) | Reader-first technical paper analysis with evidence layers and ecosystem positioning |
 | [`ai-programming-mindset`](skills/ai-programming-mindset/SKILL.md) | Diagnose feedback, verification, and orchestration gaps in AI-assisted engineering |

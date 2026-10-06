@@ -38,8 +38,11 @@ work in its technical or product ecosystem. Use `literature-review` instead for 
 
 ### [`paper-narrative`](paper-narrative/SKILL.md)
 
-Use when judging or rebuilding the story told by all figures in a manuscript. It runs
-before `figure-composer` when the task covers a complete paper.
+Use to make any research writing (a result write-up, report, progress report, manuscript,
+or grant section) read as one question, one answer, and a chain of steps a reader can
+follow. `polish` edits structure and clarity in the author's voice; `rewrite` reorganizes
+for delivery. When the input has figures, it offers a figure review that can hand figures
+to `figure-composer`. Use `research-paper-analysis-writing` for other people's papers.
 
 ## Agent engineering and skill authoring
 
@@ -157,7 +160,10 @@ guidance. Lab account and personal path values stay in private overlays.
 
 - Standalone plot: `figure-style`
 - Multi-panel figure: `figure-composer` + `figure-style`
-- Manuscript figure revision: `paper-narrative` → `figure-composer` → `figure-style`
+- Clearer research draft in the author's voice: `paper-narrative` (`polish`)
+- Research write-up restructured for the reader: `paper-narrative` (`rewrite`)
+- Manuscript figure revision: `paper-narrative` (figure review) → `figure-composer` →
+  `figure-style`
 - Literature-grounded scientific claim: `literature-review`, then the relevant writing or
   visualization skill
 - Reader-first paper analysis: `research-paper-analysis-writing` + `literature-review`

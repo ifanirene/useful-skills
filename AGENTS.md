@@ -31,7 +31,9 @@ small and reduces accidental instruction conflicts.
 - Scientific mechanisms and article illustrations with controlled style: `baoyu-article-illustrator`
 - One scientific plot or plot QA: `skills/figure-style/SKILL.md`
 - One multi-panel scientific figure: `figure-composer`, then `figure-style`
-- A paper's complete figure story: `paper-narrative`, then the figure skills it routes to
+- Make research writing of any type follow one question and one answer, by polishing the
+  author's draft or rewriting it: `paper-narrative` (its optional figure review routes to
+  the figure skills)
 - Scientific literature search or synthesis: `literature-review`
 - Reader-first technical analysis of one or a few scientific papers:
   `research-paper-analysis-writing`
