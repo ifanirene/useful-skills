@@ -23,6 +23,7 @@ small and reduces accidental instruction conflicts.
 ## Quick routing
 
 - Stanford SCG SSH setup and Slurm CPU/GPU jobs: `compute-scg`
+- SSH connection reuse and Slurm jobs on any cluster: `remote-compute-ssh`
 
 - Connect and visualize concepts across Markdown, documents, or code: `graphify`
 

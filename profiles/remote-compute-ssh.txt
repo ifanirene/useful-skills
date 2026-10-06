@@ -1,0 +1,2 @@
+# Generic SSH connection reuse and Slurm jobs for any cluster.
+remote-compute-ssh

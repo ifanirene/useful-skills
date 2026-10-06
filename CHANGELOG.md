@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-10-06
+
+- Added owner-requested `remote-compute-ssh`, the generic SSH and Slurm skill from which
+  `compute-scg` was derived. It reuses one authenticated connection through a standalone
+  Bash/OpenSSH helper, never asks for credentials in chat, and keeps accounts, aliases, and
+  storage paths in the user's own configuration. Helper unit tests pass locally; it has not
+  been revalidated on a live cluster for this publication.
+
 ## 2026-10-05
 
 - Owner-requested update to `paper-narrative`: the skill now applies to any research

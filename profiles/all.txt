@@ -20,3 +20,4 @@ intake-skill
 explain-ste100
 visual-explainer
 graphify
+remote-compute-ssh

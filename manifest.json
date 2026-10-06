@@ -583,6 +583,35 @@
       ]
     },
     {
+      "name": "remote-compute-ssh",
+      "path": "skills/remote-compute-ssh",
+      "entrypoint": "SKILL.md",
+      "category": "remote-computing",
+      "description": "Set up or reuse an SSH connection to SCG or another Slurm cluster, transfer files, and submit or monitor jobs, with a standalone connection helper.",
+      "status": "active",
+      "license": "NOASSERTION",
+      "canonical_url": "https://github.com/ifanirene/useful-skills/tree/main/skills/remote-compute-ssh",
+      "source": {
+        "type": "original",
+        "provider": "ifanirene",
+        "upstream_url": null,
+        "review_note": "Owner-requested publication to main on 2026-10-06 for the lab agent tutorial. Generic SSH/Slurm workflow; compute-scg is its SCG-specific variant. Privacy scan found no personal accounts, paths, or credentials. Bundled helper unit tests pass locally; no live cluster validation in this publication. No redistribution license assigned."
+      },
+      "compatibility": [
+        "agent-skills",
+        "codex",
+        "claude-code",
+        "opencode",
+        "gemini"
+      ],
+      "files": [
+        "SKILL.md",
+        "references/setup.md",
+        "scripts/ssh-connect",
+        "tests/test_connection_helper.py"
+      ]
+    },
+    {
       "name": "compute-scg",
       "path": "skills/compute-scg",
       "entrypoint": "SKILL.md",

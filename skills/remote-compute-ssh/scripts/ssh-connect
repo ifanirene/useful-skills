@@ -1,0 +1,101 @@
+#!/usr/bin/env bash
+# Agent-independent SSH connection setup, verification, reuse, and commands.
+# Requires Bash 3.2+, OpenSSH with ssh -G, and standard Unix utilities.
+set -euo pipefail
+
+usage() {
+    cat <<'USAGE'
+Usage: bash ssh-connect --host SSH_ALIAS_OR_HOSTNAME [options]
+  --user USERNAME     Account name; optional for an existing configured alias.
+  --identity PATH     Optional SSH private-key path, used only by OpenSSH.
+  --socket-dir PATH   Optional private directory for shared connection sockets.
+  --command COMMAND   Run a remote command through the verified connection.
+  --non-interactive   Never prompt for passwords, host keys, or Duo.
+  --help              Show this help.
+Uses existing SSH settings when available. Otherwise creates a private socket
+directory and connection sharing without editing SSH config. No agent APIs needed.
+USAGE
+}
+
+fail() { printf '%s\n' "$*" >&2; exit 2; }
+host_alias=''
+username=''
+identity=''
+socket_dir=''
+remote_command=''
+has_command=false
+non_interactive=false
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --host|--user|--identity|--socket-dir|--command)
+            [[ $# -ge 2 && -n "$2" ]] || fail "Missing value for $1."
+            case "$1" in
+                --host) host_alias=$2 ;;
+                --user) username=$2 ;;
+                --identity) identity=$2 ;;
+                --socket-dir) socket_dir=$2 ;;
+                --command) remote_command=$2; has_command=true ;;
+            esac
+            shift 2 ;;
+        --non-interactive) non_interactive=true; shift ;;
+        --help|-h) usage; exit 0 ;;
+        *) fail "Unknown option: $1. Use --help." ;;
+    esac
+done
+[[ -n "$host_alias" && "$host_alias" != -* ]] || fail 'Provide --host with your SSH alias or hostname.'
+command -v ssh >/dev/null 2>&1 || fail 'OpenSSH is required.'
+
+ssh_options=(-o ConnectTimeout=10 -o ConnectionAttempts=1)
+[[ -z "$username" ]] || ssh_options+=(-l "$username")
+[[ -z "$identity" ]] || ssh_options+=(-i "$identity")
+config=$(ssh -G "${ssh_options[@]}" "$host_alias" 2>/dev/null) || fail 'Cannot resolve SSH settings; check the host and OpenSSH version.'
+setting() {
+    printf '%s\n' "$config" | awk -v key="$1" '$1 == key { print substr($0, index($0, " ") + 1); exit }'
+}
+user_socket=$(setting controlpath)
+
+if [[ -n "$socket_dir" || -z "$user_socket" || "$user_socket" == none ]]; then
+    socket_dir=${socket_dir:-${HOME:?HOME is required unless --socket-dir is provided}/.ssh/ssh-connect}
+    [[ ! -L "$socket_dir" ]] || fail 'The socket directory must not be a symlink.'
+    (umask 077; mkdir -p "$socket_dir")
+    [[ -d "$socket_dir" && -O "$socket_dir" ]] || fail 'The socket directory must be owned by the current user.'
+    chmod 700 "$socket_dir"
+    socket_dir=$(cd "$socket_dir" && pwd -P)
+    ssh_options+=(-o "ControlPath=$socket_dir/cm-%C")
+fi
+ssh_options+=(-o ControlMaster=auto)
+persist=$(setting controlpersist)
+if [[ -z "$persist" || "$persist" == no || "$persist" == 0 ]]; then
+    ssh_options+=(-o ControlPersist=12h)
+fi
+config=$(ssh -G "${ssh_options[@]}" "$host_alias" 2>/dev/null) || fail 'Cannot resolve the shared socket path.'
+user_socket=$(setting controlpath)
+[[ -n "$user_socket" && "$user_socket" != none ]] || fail 'OpenSSH did not resolve a ControlPath.'
+
+live_check() {
+    ssh "${ssh_options[@]}" -o BatchMode=yes "$host_alias" 'true'
+}
+if probe_output=$(live_check 2>&1); then
+    :
+else
+    printf '%s\n' "$probe_output" >&2
+    if ssh "${ssh_options[@]}" -O check "$host_alias" >/dev/null 2>&1; then
+        fail 'The local master exists but remote verification failed. Diagnose the network/master; no sessions were closed.'
+    fi
+    case "$probe_output" in
+        *'Permission denied'*|*'Authentication failed'*|*'Too many authentication failures'*) ;;
+        *) fail 'Resolve the network, host-key, or configuration error above before retrying.' ;;
+    esac
+    if $non_interactive || [[ ! -t 0 || ! -t 1 ]]; then
+        fail 'Authentication is needed. Run this helper once in your Terminal with the same host/user options and without --non-interactive.'
+    fi
+    printf 'Opening a shared connection. Complete authentication in this terminal.\n'
+    ssh "${ssh_options[@]}" -MNf "$host_alias"
+    live_check || fail 'Authentication completed but remote verification failed; inspect the SSH error.'
+fi
+[[ -S "$user_socket" && -O "$user_socket" ]] || fail 'SSH responded, but an owned shared socket was not found. Check the connection settings.'
+if $has_command; then
+    ssh "${ssh_options[@]}" -o BatchMode=yes "$host_alias" "$remote_command"
+else
+    printf 'SSH connection verified. Reuse this helper with --non-interactive and --command COMMAND.\n'
+fi

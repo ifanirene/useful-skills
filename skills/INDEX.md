@@ -150,6 +150,12 @@ previewable presentation scaffolds. Route native PowerPoint editing to a PPTX-ca
 
 ## Remote computing
 
+### [`remote-compute-ssh`](remote-compute-ssh/SKILL.md)
+
+Use for SSH access to SCG, Sherlock, or another Slurm cluster from a local agent: reuse one
+authenticated connection, transfer files, and submit or monitor jobs. Ships a standalone
+helper that needs only Bash and OpenSSH. Use `compute-scg` for SCG-specific sizing and templates.
+
 ### [`compute-scg`](compute-scg/SKILL.md)
 
 Use for Stanford SCG onboarding and Slurm CPU/GPU work. Includes a portable SSH
