@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-10-20
+
+- Added owner-requested `living-wiki`. It generalizes an LLM-maintained project wiki: one current
+  answer per question, registered sources with hashes and coverage, attributed decisions, and
+  links to analysis records instead of copies. Ships config-driven audit (with a known-error
+  baseline), Zotero export and image-gallery tools ported from a working project wiki, plus page
+  templates.
+- Added owner-requested `ouroboros`, a wiki-driven think tank modeled on Image Dream's run
+  bookkeeping. It reads only registered wiki content through GitHub, samples scientific lenses
+  and inversions, verifies outside claims in a separate step, gates briefs with fresh-context
+  critics and a cold read, and records investigator `pursue` or `drop` verdicts in a private
+  git journal. The helper's unit tests pass against local git remotes. Live scheduling is
+  configured outside this library.
+
 ## 2026-10-06
 
 - Added owner-requested `remote-compute-ssh`, the generic SSH and Slurm skill from which

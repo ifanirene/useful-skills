@@ -66,6 +66,20 @@ Use to build or explore concept graphs across related Markdown files, documents,
 Loads the official installed Python package's host workflow and references. Preserve source
 provenance and distinguish explicit relationships from semantic inferences.
 
+### [`living-wiki`](living-wiki/SKILL.md)
+
+Use to bootstrap, adopt, maintain or audit a project wiki that gives each durable question one
+current answer grounded in registered sources. It keeps investigator decisions apart from agent
+suggestions, and links to analysis records instead of duplicating them. Includes config-driven
+audit, Zotero and image tools.
+
+### [`ouroboros`](ouroboros/SKILL.md)
+
+Use to set up or run a think-tank brief from registered `living-wiki` wikis. Dreamers apply
+scientific lenses and inversions, a fresh verifier labels outside claims, and critics and a cold
+read gate the brief. The investigator's pursue or drop verdicts feed later runs. Use
+`innovation-assistant` for interactive product ideation instead.
+
 ## Visual communication
 
 ### [`visual-explainer`](visual-explainer/SKILL.md)

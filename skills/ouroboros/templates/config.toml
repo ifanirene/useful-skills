@@ -1,0 +1,27 @@
+# Ouroboros journal configuration. Keep this file in the private journal, not in the skill.
+
+# One entry per project wiki. The run reads only the wiki folder and the files its
+# source manifest registers, fetched from GitHub so the same run works locally or in the cloud.
+[[wiki]]
+name = "example"                  # short lowercase slug used in briefs and the cache
+repo = "owner/repository"         # GitHub owner/name (private repositories use `gh` authentication)
+branch = "main"
+dir = "wiki"                      # wiki folder inside the repository
+# manifest = "wiki/source-manifest.json"   # default: <dir>/source-manifest.json
+# local = "/path/to/local/checkout"        # optional: report unpushed wiki changes and run the local audit
+
+[judgment]
+# Distilled investigator judgment, read after the first dreaming pass and by the critic.
+files = []
+
+[voice]
+# The investigator's own writing, as "<wiki name>:<registered repo-relative path>".
+exemplars = []
+
+[schedule]
+deep_weekday = "sun"              # weekly deep run on the oldest open questions
+first_run_days = 14               # history window before the first brief
+orphan_days = 60                  # pages unchanged this long can be sampled as orphans
+orphans_per_wiki = 2              # doubled in deep runs
+nightly_dreamers = 2
+deep_dreamers = 3

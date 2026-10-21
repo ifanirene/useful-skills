@@ -1,0 +1,32 @@
+# living-wiki configuration, at the repository root. Delete sections you do not use.
+
+[wiki]
+dir = "wiki"                      # wiki folder (repo-relative)
+index = "index.md"                # entry page (wiki-relative)
+manifest = "source-manifest.json" # source register (wiki-relative)
+raw_roots = ["resources"]         # curated folders whose every file must be registered; [] if none
+ignore = []                       # repo-relative globs to skip in the raw-root scan
+skip_dirs = ["evidence"]          # regenerable wiki folders excluded from page checks
+
+[audit]
+baseline = ""                     # repo-relative JSON of accepted known errors
+
+[zotero]
+mode = "none"                     # "local-api" to refresh bibliography views from Zotero desktop
+api_base = "http://127.0.0.1:23119/api/users/0"
+root_collection = ""              # collection key whose items (and subcollections) are exported
+export_dir = "references"         # wiki-relative
+exclude_item_types = []           # e.g. ["webpage"]: keep these as wiki sources
+exclude_doi_prefixes = []         # DOI prefixes that identify non-publication records
+
+[images]
+enabled = false
+manifest = "image-manifest.json"  # wiki-relative
+scan_roots = []                   # repo-relative; empty means raw_roots plus the wiki folder
+gallery = "sources/images.md"
+gallery_dir = "sources/image-gallery"
+library_page = ""                 # optional wiki-relative link target
+criteria_page = ""                # optional wiki-relative link target, may carry #anchor
+thumbnail_dir = "output/wiki-gallery/thumbnails"   # repo-relative, outside scan_roots
+thumbnail_size = [300, 220]
+max_references = 2                # gallery selections per source group

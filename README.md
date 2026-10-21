@@ -35,6 +35,8 @@ project context stay outside the public registry.
 | [`skill-writing-principles`](skills/skill-writing-principles/SKILL.md) | Design outcome-driven, bounded, and testable Agent Skill instructions |
 | [`image-dream`](skills/image-dream/SKILL.md) | Recurring artistic covers from repository elements and a personal or ChatGPT image library |
 | [`graphify`](skills/graphify/SKILL.md) | Connect concepts across Markdown, documents, and code; query and visualize knowledge graphs |
+| [`living-wiki`](skills/living-wiki/SKILL.md) | Build, maintain and audit a source-grounded project wiki with attributed decisions |
+| [`ouroboros`](skills/ouroboros/SKILL.md) | Lateral-thinking research briefs from registered project wikis, with verified claims and investigator verdicts |
 | [`visual-explainer`](skills/visual-explainer/SKILL.md) | Interactive HTML explanations with diagrams, controls, process steppers, and requested slide decks |
 | [`show-me`](skills/show-me/SKILL.md) | Explain structure, flow, and change with concise visual forms |
 | [`explain-ste100`](skills/explain-ste100/SKILL.md) | Concept explanations and technical English with ASD-STE100 principles and explicit compliance limits |

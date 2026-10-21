@@ -21,3 +21,5 @@ explain-ste100
 visual-explainer
 graphify
 remote-compute-ssh
+living-wiki
+ouroboros

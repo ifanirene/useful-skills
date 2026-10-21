@@ -1,0 +1,3 @@
+# Wiki-driven think-tank briefs; needs living-wiki wikis.
+ouroboros
+living-wiki

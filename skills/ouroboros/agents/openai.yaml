@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ouroboros"
+  short_description: "Lateral research briefs from your project wikis"
+  default_prompt: "Use $ouroboros to run a think-tank brief from my registered project wikis."

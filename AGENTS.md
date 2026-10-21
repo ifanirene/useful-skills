@@ -42,6 +42,8 @@ small and reduces accidental instruction conflicts.
   `ai-programming-mindset`
 - Design or review reusable Skill instructions: `skill-writing-principles`
 - Recurring artistic covers from repository elements and a personal library: `image-dream`
+- Build, maintain or audit a source-grounded project wiki: `living-wiki`
+- Lateral research briefs from registered project wikis, now or on a schedule: `ouroboros`
 - Visual explanation with a diagram, code-shape sketch, or focused HTML artifact: `show-me`
 - Internal memos, external analytical articles, or article distribution posts:
   `writing-workflows`

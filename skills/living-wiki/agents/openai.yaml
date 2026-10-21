@@ -1,0 +1,4 @@
+interface:
+  display_name: "Living Wiki"
+  short_description: "Build and maintain a source-grounded project wiki"
+  default_prompt: "Use $living-wiki to bootstrap or update this repository's project wiki."

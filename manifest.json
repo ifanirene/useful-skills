@@ -643,6 +643,81 @@
         "templates/gpu-p100-smoke.sbatch",
         "tests/test_connection_helper.py"
       ]
+    },
+    {
+      "name": "living-wiki",
+      "path": "skills/living-wiki",
+      "entrypoint": "SKILL.md",
+      "category": "knowledge-management",
+      "description": "Build, adopt, maintain and audit a source-grounded project wiki with one current answer per question, registered sources and attributed decisions.",
+      "status": "active",
+      "license": "NOASSERTION",
+      "canonical_url": "https://github.com/ifanirene/useful-skills/tree/main/skills/living-wiki",
+      "source": {
+        "type": "original",
+        "provider": "ifanirene",
+        "upstream_url": null,
+        "review_note": "Original workflow requested by the repository owner, generalized from the owner's working project wiki; its audit, Zotero and image tools are ported and made config-driven. No redistribution license has been assigned; functional and privacy review pending."
+      },
+      "compatibility": [
+        "agent-skills",
+        "claude-code",
+        "codex"
+      ],
+      "files": [
+        "SKILL.md",
+        "agents/openai.yaml",
+        "references/bootstrap.md",
+        "references/formats.md",
+        "references/maintain.md",
+        "references/tools.md",
+        "scripts/test_living_wiki.py",
+        "scripts/wiki_audit.py",
+        "scripts/wiki_images.py",
+        "scripts/wiki_zotero.py",
+        "scripts/wikiconf.py",
+        "templates/AGENTS.md",
+        "templates/NOTES.md",
+        "templates/decisions.md",
+        "templates/index.md",
+        "templates/living-wiki.toml",
+        "templates/log.md",
+        "templates/questions.md",
+        "templates/source-note.md",
+        "templates/topic.md"
+      ]
+    },
+    {
+      "name": "ouroboros",
+      "path": "skills/ouroboros",
+      "entrypoint": "SKILL.md",
+      "category": "knowledge-management",
+      "description": "Produce lateral-thinking research briefs from registered project wikis, with separate claim verification, fresh-context critics and investigator verdicts.",
+      "status": "active",
+      "license": "NOASSERTION",
+      "canonical_url": "https://github.com/ifanirene/useful-skills/tree/main/skills/ouroboros",
+      "source": {
+        "type": "original",
+        "provider": "ifanirene",
+        "upstream_url": null,
+        "review_note": "Original workflow requested by the repository owner. Run bookkeeping follows image-dream; pipeline ideas adapt public grapeot/context-infrastructure and writing-skill patterns without copying their code. No redistribution license has been assigned; functional and privacy review pending."
+      },
+      "compatibility": [
+        "agent-skills",
+        "claude-code",
+        "codex"
+      ],
+      "files": [
+        "SKILL.md",
+        "agents/openai.yaml",
+        "references/brief-format.md",
+        "references/configuration.md",
+        "references/lenses.md",
+        "references/pipeline.md",
+        "scripts/ouroboros.py",
+        "scripts/test_ouroboros.py",
+        "templates/config.toml"
+      ]
     }
   ]
 }
