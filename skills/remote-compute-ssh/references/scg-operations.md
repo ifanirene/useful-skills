@@ -1,5 +1,29 @@
 # SCG Slurm and project operations
 
+Read this reference only for a selected SCG target. Use
+[connection setup](setup.md) for common alias, authentication, persistence, and
+shutdown mechanics; [multiple servers](multiple-servers.md) applies when another
+target is selected alongside SCG.
+
+## SCG onboarding
+
+An active SUNet ID alone does not grant SCG membership. Follow the user's lab
+access process in [SCG Quick Start](https://login.scg.stanford.edu/quick_start/).
+On macOS/Linux, ordinary Terminal access is:
+
+```bash
+ssh YOUR_SUNET_ID@login.scg.stanford.edu
+```
+
+To configure an optional `scg` alias, use the common setup example with
+`Host scg`, `HostName login.scg.stanford.edu`, and the user's own SUNet ID.
+Check a new host's fingerprint against a trusted site source. Complete password
+and Duo prompts in the user's Terminal/device. SCG supports public keys as a
+first factor; that does not remove the second-factor requirement. See its
+[connection guide](https://login.scg.stanford.edu/tutorials/connecting/) and
+[ControlMaster guide](https://login.scg.stanford.edu/tutorials/ssh_controlmaster/).
+The bundled helper requires no Claude Science integration or app-specific socket links.
+
 ## Sources and evidence status
 
 Derived from investigator-supplied Claude Science compute notes covering
@@ -20,9 +44,14 @@ date, account/partition/QOS and validation level when refreshing a lab profile.
 ## Private lab configuration
 
 Keep real accounts, usernames, environment paths and storage in an ignored
-project overlay or `.local/compute-scg/settings.json` in this registry. A lab
-can distribute that overlay privately. Do not commit it or assume it accompanies
-a public clone. Example fields (placeholders, not executable configuration):
+project overlay or `.local/remote-compute-ssh/scg-settings.json` in this registry.
+Existing `.local/compute-scg/settings.json` remains a supported fallback; retirement
+of the old skill does not remove or invalidate that private file. Prefer the
+consuming project's configuration, then the new location, then the legacy file;
+resolve conflicting settings before submission. Read only necessary fields as
+JSON data, never as executable shell code. A lab can distribute its overlay
+privately. Do not commit it or assume it accompanies a public clone. Example fields
+(placeholders, not executable configuration):
 
 ```json
 {
@@ -84,6 +113,12 @@ job records. P100 detection says nothing about H200/A100 runtime readiness.
 
 ## Resource selection and submission
 
+Copy and customize the [CPU template](../templates/scg-cpu.sbatch) or
+[P100 detection template](../templates/scg-gpu-p100-smoke.sbatch) only for SCG.
+Preserve user scripts and replace every `REPLACE_*` token before submission.
+Neither template has been cluster-run as supplied; P100 detection does not
+validate an application's GPU compatibility or scientific results.
+
 Start small for exploration (historical suggestion: 2-4 CPUs, 32-64G, 2-4h),
 but choose from data size, algorithm, effective parallelism and pilot evidence.
 Do not turn these into required minimums; GPU detection needs much less.
@@ -93,8 +128,9 @@ per step/task and may miss brief peaks; interpret it with logs and job shape.
 A faster GPU is useful only when VRAM, supported CUDA/framework versions and
 workload scaling justify it. Request one GPU for initial compatibility checks.
 
-Normally set `--nodes=1 --ntasks=1`, explicit `--cpus-per-task`, `--mem` and
-`--time`; bind application thread counts to the allocation. Arrays suit
+Specify the confirmed SCG account and partition for every job. Normally set
+`--nodes=1 --ntasks=1`, explicit `--cpus-per-task`, `--mem` and `--time`;
+bind application thread counts to the allocation. Arrays suit
 independent samples, subject to authorized total size and concurrency.
 Render template placeholders before submission: `#SBATCH` values do not expand
 shell variables. Ensure output directories exist before `sbatch` (Slurm opens

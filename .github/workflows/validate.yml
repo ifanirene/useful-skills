@@ -8,6 +8,16 @@ permissions:
   contents: read
 
 jobs:
+  remote-compute-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Test SSH recovery and separate server connections
+        run: python -m unittest discover -s skills/remote-compute-ssh/tests -v
+
   figure-style-tests:
     runs-on: ubuntu-latest
     steps:

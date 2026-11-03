@@ -2,6 +2,16 @@
 
 ## 2026-11-03
 
+- Unified remote computing under `remote-compute-ssh`. SCG details and CPU/GPU
+  templates load only for selected SCG targets; optional multiple-server work
+  keeps each connection, environment, authorization, and job record separate.
+- Retired `compute-scg` and its discovery profile after accounting for all eight
+  source files. Preserved its operations, templates, setup details, provenance,
+  original helper behavior, and legacy private-settings fallback. See
+  `review/remote-compute-unification-2026-11-03.md` for the migration audit.
+- Added two multi-server isolation checks to the ten inherited helper tests and
+  included the suite in CI. Tests use local sockets and fake remote responses;
+  no live cluster login or job was performed.
 - Revalidated the pending `figure-style` consolidation and related
   `paper-narrative` and `baoyu-article-illustrator` routing updates. All eight
   figure-helper tests, registry checks, public-content scan, and local-reference

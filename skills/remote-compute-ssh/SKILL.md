@@ -1,6 +1,6 @@
 ---
 name: remote-compute-ssh
-description: Set up or reuse a user's SSH connection to SCG or another Slurm cluster, recover shared authentication, transfer files, and submit or monitor jobs. Includes a standalone, agent-independent connection helper.
+description: Set up or reuse SSH connections to one or more servers, including SCG and Sherlock, transfer files, and submit or monitor Slurm jobs. Includes selective SCG guidance and a standalone connection helper.
 license: NOASSERTION
 ---
 
@@ -13,15 +13,18 @@ Other platforms can use a compatible Unix environment.
 
 ## Establish the user's settings
 
-Ask for the user's existing SSH alias or their cluster hostname and username.
-`scg` is a suggested alias, not an assumed account. For SCG, the public login
-hostname is `login.scg.stanford.edu`; each person supplies their own SUNet ID.
-If the user lacks an account, direct them to the cluster's official access
-process; SSH configuration cannot grant cluster membership.
-For first-time SCG or Sherlock access and local Terminal aliases, read
-[references/setup.md](references/setup.md). Sherlock uses
-`login.sherlock.stanford.edu`; its documented authentication does not support
-SSH public keys, so skip key setup and key-only tests for that cluster.
+Establish the selected server or servers, their existing SSH aliases or hostnames,
+and the user's accounts. Ask only for settings missing from the request or known
+project configuration. Account enrollment and compute allocations are separate
+from SSH setup.
+
+- For a selected **SCG** target, read [SCG operations](references/scg-operations.md)
+  before onboarding or preparing jobs. It contains SCG access, private lab
+  configuration, CPU/GPU sizing, templates, and dated observations. Load it only
+  for SCG; its accounts and partitions do not apply to other clusters.
+- For first-time access or local aliases, read [connection setup](references/setup.md).
+  Its Sherlock section covers enrollment and authentication. Sherlock's documented
+  policy does not support SSH public keys, so skip key setup and key-only tests there.
 
 Inspect only the relevant alias with `ssh -G SSH_ALIAS`. Confirm the resolved
 hostname and username before connecting. If the alias is absent or resolves
@@ -30,6 +33,14 @@ or [references/setup.md](references/setup.md) to help configure an alias.
 Preserve unrelated SSH settings. Keep usernames, private keys,
 passwords, lab allocations, and private storage paths out of the shared skill.
 Use the active user's local configuration; never copy another person's setup.
+
+## One or several servers
+
+A single-server task uses one helper invocation per operation. When the user
+selects several targets, read [multiple servers](references/multiple-servers.md)
+before connecting or dispatching commands. Keep each target's connection, working
+directory, environment, authorization, and job records separate. Successful
+authentication or job approval on one target does not establish either on another.
 
 ## Reuse and recover connections
 
@@ -84,10 +95,9 @@ pending. Use the setup reference for account enrollment or an optional alias.
 
 ## Keys and two-factor authentication
 
-Keys may replace the first authentication factor while the cluster still
-requires Duo. Do not assume an installed or accepted key gives unattended
-access. SCG describes keys as a first factor in its
-[connection guidance](https://login.scg.stanford.edu/tutorials/connecting/).
+Follow the selected server's authentication policy. Keys may replace the first
+authentication factor while the server still requires Duo; an installed or
+accepted key does not establish unattended access.
 Reusing a master avoids repeated prompts without changing server requirements.
 Connection persistence is an idle period, not a Slurm job time limit.
 
@@ -107,31 +117,35 @@ key-only access for that user and host at the time of testing.
   Ask for the project's storage location; do not assume a lab name or Oak path.
 - Inspect remote project instructions and environments before editing or
   running analyses. Local files and environments are not automatically remote.
-- Keep login nodes for light inspection, orchestration, and job monitoring.
-  Run analyses through Slurm. Discover available tools, accounts, partitions,
+- On Slurm clusters, keep login nodes for light inspection, orchestration, and
+  job monitoring; run analyses through Slurm. Discover tools, accounts, partitions,
   and limits from project instructions or read-only scheduler queries. Login
   node hardware is not a resource budget. SSH access does not imply GPU access.
-- Obtain the user's allocation and resource budget before a billed or expensive
-  submission. Every job needs explicit walltime, CPUs, and memory; request GPUs
-  only when needed. Reuse suitable environments and respect project installation
-  rules. Store durable data on the user's confirmed shared storage.
+- Carry forward existing authorization for the selected target. Obtain any
+  missing approval for billed submissions, GPUs, large arrays, cancellation or
+  resubmission, and material budget increases. Do not ask again for jobs within
+  an approved envelope. Every job needs explicit walltime, CPUs, and memory;
+  request GPUs only when useful. Reuse suitable environments,
+  respect installation permissions, and keep durable results on confirmed shared
+  storage. Use Slurm commands only on targets running Slurm.
 - Stage authorized inputs with `scp`, `sftp`, or `rsync`; verify paths and
   transfers. Keep large remote datasets remote and retrieve selected outputs.
 - Submit prepared scripts with `sbatch --parsable`; retain the script,
-  environment, job ID, working directory, and output paths. Inspect existing
-  jobs before resubmitting. Monitor with `squeue`/`sacct`; do not duplicate a
-  job whose status is unknown or increase costs without authorization.
+  account/partition, environment, target plus job ID, working directory, and output
+  paths. Inspect existing jobs before resubmitting. Monitor with `squeue`/`sacct`;
+  do not duplicate a job whose status is unknown or increase costs without authorization.
 - Check scheduler state, exit code, logs, and output files before claiming
   completion. SSH disconnection does not itself cancel submitted jobs. Retain
   results unless cleanup is part of the request.
 
 ## Completion and portability
 
-Report the connection mode actually verified, remote identity, jobs run,
-deliverable paths, and remaining failures. When already on the cluster, use
-local commands rather than this workstation's SSH recovery workflow.
+Report per target the connection mode actually verified, remote identity, jobs
+run or still pending, checked outputs, deliverable paths, and remaining failures.
+When already on the cluster, use local commands rather than this workstation's
+SSH recovery workflow.
 
-Share the whole skill directory, including `scripts/` and `references/`.
+Share the whole skill directory, including `scripts/`, `references/`, and `templates/`.
 Do not distribute credentials, sockets, personal SSH config, or local job data.
 For bundled helper tests, run `python3 -m unittest discover -s tests` from the
 skill directory; Python is needed only for these tests, not for the helper.

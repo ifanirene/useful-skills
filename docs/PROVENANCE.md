@@ -125,8 +125,13 @@ Apache LICENSE, MIT attribution, and NOTICE files. The adapter reads the install
 package's host workflow and progressive references, rather than copying them.
 Local installation was requested on 2026-10-05; publication and merge review is pending.
 
-`compute-scg` is an owner-requested SCG variant derived from the owner-authored
-`remote-compute-ssh` helper and supplied Claude Science compute notes. Exact
-bundled code hashes are retained in its provenance sidecar. No upstream repository
-URL or redistribution license has been established; recorded as `NOASSERTION`.
-Personal paths and actual lab accounts are retained only in an ignored overlay.
+`remote-compute-ssh` is an owner-authored, portable SSH/Slurm workflow. On
+2026-11-03, it absorbed the SCG operations reference and templates from the retired
+`compute-scg` variant, whose supplied Claude Science observations remain dated and
+qualified. Its selective SCG route preserves the private-overlay contract, with
+the old overlay location supported as a fallback. The helpers and original tests
+were identical; one helper and an expanded test suite remain. Source hashes and
+the file migration map are in `references/scg-provenance.json` under the surviving
+skill, with the semantic audit in `review/remote-compute-unification-2026-11-03.md`.
+No upstream repository URL or redistribution license has been established;
+recorded as `NOASSERTION`. Personal paths and lab accounts remain in ignored overlays.

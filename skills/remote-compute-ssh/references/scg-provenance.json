@@ -1,0 +1,58 @@
+{
+  "derived_from": "remote-compute-ssh",
+  "derived_on": "2026-10-05",
+  "source_kind": "owner-authored installed skill; no upstream repository URL established",
+  "authorization": "Owner requested compute-scg variant and publication to main.",
+  "license": "NOASSERTION",
+  "note": "No redistribution license assigned; no third-party license invented.",
+  "bundled_source_sha256": {
+    "scripts/ssh-connect": "77842ae0ddd1f7da9acd8485350e000d856e724fb1c57a3b80023904b81fd277",
+    "tests/test_connection_helper.py": "a3a0a7277503f739fa372f39fe0754008d63037a44563247cf1a5d7f1e7aed27"
+  },
+  "historical_record_for": "compute-scg",
+  "consolidation": {
+    "date": "2026-11-03",
+    "surviving_skill": "remote-compute-ssh",
+    "baseline_commit": "9c4707483c7ebf152e34b5bbdaa0dfebb1c1c867",
+    "retired_source_sha256": {
+      "SKILL.md": "b957653fa4a2cec15bc326cfae37eee49da406c6f56fca0efb7614c7d264c56e",
+      "references/provenance.json": "d445ef19045c14b26498eaec64e2992248b6d51669869c1737e931d2f8c3ba45",
+      "references/setup.md": "bccf143c428cbc1fe5b97ae18e4c5a6d5f71d5091aafd5f9ea1347a99441c15a",
+      "references/scg-operations.md": "454f1a555e64ba0dd813ac2a2e8cfe3cd1bb73645699184e7188fe80b3524522",
+      "tests/test_connection_helper.py": "a3a0a7277503f739fa372f39fe0754008d63037a44563247cf1a5d7f1e7aed27",
+      "scripts/ssh-connect": "77842ae0ddd1f7da9acd8485350e000d856e724fb1c57a3b80023904b81fd277",
+      "templates/gpu-p100-smoke.sbatch": "754f9b0e950274369a2dc9dff6a273175073e70dfd322e3d1c68b7dd5f7b8ac1",
+      "templates/cpu.sbatch": "3019a6f48422f03e41678f542180da007478f77e75e0e24bd2c03a301b2dcdef"
+    },
+    "file_migration": {
+      "SKILL.md": [
+        "SKILL.md",
+        "references/scg-operations.md"
+      ],
+      "references/setup.md": [
+        "references/setup.md",
+        "references/scg-operations.md"
+      ],
+      "references/scg-operations.md": [
+        "references/scg-operations.md"
+      ],
+      "references/provenance.json": [
+        "references/scg-provenance.json"
+      ],
+      "scripts/ssh-connect": [
+        "scripts/ssh-connect"
+      ],
+      "templates/cpu.sbatch": [
+        "templates/scg-cpu.sbatch"
+      ],
+      "templates/gpu-p100-smoke.sbatch": [
+        "templates/scg-gpu-p100-smoke.sbatch"
+      ],
+      "tests/test_connection_helper.py": [
+        "tests/test_connection_helper.py"
+      ]
+    },
+    "retained_helper_sha256": "77842ae0ddd1f7da9acd8485350e000d856e724fb1c57a3b80023904b81fd277",
+    "note": "Historical hashes identify the retired source snapshot, not edited destination files. Every original helper test remains; the suite adds multi-server connection checks. The SCG operations and setup text were consolidated with preserved source qualifications. No live cluster login was performed."
+  }
+}

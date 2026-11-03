@@ -1,2 +1,0 @@
-# One SCG workflow with a bundled portable SSH helper.
-compute-scg

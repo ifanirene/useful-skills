@@ -1,10 +1,9 @@
 # Set up an SSH account and connection sharing
 
-Ask for an existing SSH alias first. Otherwise obtain the user's cluster login
-hostname and username. For SCG use the user's own SUNet ID and the public login
-host `login.scg.stanford.edu`. Account registration, lab affiliation, allocations,
-and any required VPN access are separate from SSH setup; consult
-[SCG Quick Start](https://login.scg.stanford.edu/quick_start/) for access steps.
+Use the selected server's existing SSH alias or establish its hostname and the
+user's account. Account registration, lab affiliation, allocations, and any
+required VPN access are separate from SSH setup. For SCG onboarding, read
+[SCG operations](scg-operations.md) only when SCG is a selected target.
 
 ## Sherlock first-time setup
 
@@ -54,7 +53,7 @@ Keep computation in Slurm jobs rather than on login nodes.
 Use the user's own account and the supplied hostname:
 
 ```bash
-bash scripts/ssh-connect --host login.scg.stanford.edu --user YOUR_CLUSTER_USERNAME
+bash scripts/ssh-connect --host cluster.example.org --user YOUR_CLUSTER_USERNAME
 ```
 
 The helper uses standard OpenSSH and creates private connection-sharing state
@@ -71,8 +70,8 @@ If setup is requested, add a focused entry without replacing unrelated blocks.
 Have the user replace `YOUR_CLUSTER_USERNAME` with their own account:
 
 ```sshconfig
-Host scg
-    HostName login.scg.stanford.edu
+Host cluster-example
+    HostName cluster.example.org
     User YOUR_CLUSTER_USERNAME
     ControlMaster auto
     ControlPath ~/.ssh/cm-%C
@@ -86,8 +85,9 @@ convenience suggestion, subject to the user's preferences and site rules. Keep
 the socket in a directory only the user can access. Create `~/.ssh` if needed
 with mode 700; keep a newly created config private with mode 600. Never commit
 the populated configuration. Verify the effective hostname, username, and
-ControlPath before connecting. SCG documents connection reuse in its
-[ControlMaster guide](https://login.scg.stanford.edu/tutorials/ssh_controlmaster/).
+ControlPath before connecting. Windows OpenSSH can provide ordinary SSH access;
+the bundled Bash helper needs a compatible Unix environment such as WSL, with
+its own local configuration.
 
 For a new host, confirm its host-key fingerprint against a trusted site source
 before accepting it. Resolve host-key changes through the site administrator.
@@ -97,7 +97,7 @@ before accepting it. Resolve host-key changes through the site administrator.
 From the skill directory, run in a user-interactive terminal:
 
 ```bash
-bash scripts/ssh-connect --host scg
+bash scripts/ssh-connect --host cluster-example
 ```
 
 Complete authentication in the terminal and any Duo approval on the user's own
@@ -109,6 +109,21 @@ connection-sharing state when absent, but does not edit SSH configuration.
 Exit codes: 0 = connection verified; 2 = connection/setup/input failure.
 Remote commands and authentication may return OpenSSH's or the command's
 own exit code; a failed remote command is not itself an authentication failure.
+
+## Persistence and explicit shutdown
+
+The helper defaults to 12 hours of idle persistence when no effective timeout
+is present. Existing configured timeouts are preserved, except the helper
+currently treats numeric `0` as unset; use `ControlPersist yes` for indefinite
+client-side persistence. Network/server interruptions, sleep, or shutdown can
+end it earlier. A master opened from Terminal survives closing the chat app.
+
+When the user requests shutdown, inspect the effective socket and target first.
+For a configured alias, `ssh -O exit SSH_ALIAS` closes its master and can disconnect
+attached sessions. For helper-created settings, use
+`ssh -S /ABSOLUTE/CONTROL_SOCKET -O exit TARGET` with the resolved socket and matching
+host/user options. Close only the selected connection. Submitted Slurm batch jobs
+continue independently; cancelling jobs is a separate action.
 
 ## Optional SSH key setup
 

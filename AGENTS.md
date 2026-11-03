@@ -22,8 +22,8 @@ small and reduces accidental instruction conflicts.
 
 ## Quick routing
 
-- Stanford SCG SSH setup and Slurm CPU/GPU jobs: `compute-scg`
-- SSH connection reuse and Slurm jobs on any cluster: `remote-compute-ssh`
+- SSH connections to one or several servers, file transfer, and Slurm jobs:
+  `remote-compute-ssh` (load SCG details only for selected SCG targets)
 
 - Connect and visualize concepts across Markdown, documents, or code: `graphify`
 

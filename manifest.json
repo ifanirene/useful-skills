@@ -570,7 +570,7 @@
       "path": "skills/remote-compute-ssh",
       "entrypoint": "SKILL.md",
       "category": "remote-computing",
-      "description": "Set up or reuse an SSH connection to SCG or another Slurm cluster, transfer files, and submit or monitor jobs, with a standalone connection helper.",
+      "description": "Set up or reuse SSH connections to one or several servers, transfer files, and run Slurm jobs, with selective SCG operations and templates.",
       "status": "active",
       "license": "NOASSERTION",
       "canonical_url": "https://github.com/ifanirene/useful-skills/tree/main/skills/remote-compute-ssh",
@@ -578,7 +578,7 @@
         "type": "original",
         "provider": "ifanirene",
         "upstream_url": null,
-        "review_note": "Owner-requested publication to main on 2026-10-06 for the lab agent tutorial. Generic SSH/Slurm workflow; compute-scg is its SCG-specific variant. Privacy scan found no personal accounts, paths, or credentials. Bundled helper unit tests pass locally; no live cluster validation in this publication. No redistribution license assigned."
+        "review_note": "Owner-authored portable SSH/Slurm workflow. Owner requested consolidation on 2026-11-03: SCG operations, templates, setup details and provenance preserved from retired compute-scg, with multi-server guidance and isolation tests. Historical notes remain qualified, private overlays remain local, and the legacy SCG overlay remains supported. See references/scg-provenance.json and review/remote-compute-unification-2026-11-03.md. No live cluster validation or redistribution license assigned."
       },
       "compatibility": [
         "agent-skills",
@@ -589,41 +589,13 @@
       ],
       "files": [
         "SKILL.md",
-        "references/setup.md",
-        "scripts/ssh-connect",
-        "tests/test_connection_helper.py"
-      ]
-    },
-    {
-      "name": "compute-scg",
-      "path": "skills/compute-scg",
-      "entrypoint": "SKILL.md",
-      "category": "remote-computing",
-      "description": "Set up SCG SSH access and prepare, size, submit and verify Slurm CPU/GPU jobs with private lab configuration.",
-      "status": "active",
-      "license": "NOASSERTION",
-      "canonical_url": "https://github.com/ifanirene/useful-skills/tree/main/skills/compute-scg",
-      "source": {
-        "type": "original",
-        "provider": "ifanirene",
-        "upstream_url": null,
-        "review_note": "Owner-requested SCG variant of remote-compute-ssh. Bundled helper/test hashes retained; historical Claude Science observations generalized, real account mappings kept in ignored local overlay. No redistribution license assigned. Publication to main explicitly requested 2026-10-05; no live cluster validation."
-      },
-      "compatibility": [
-        "agent-skills",
-        "codex",
-        "claude-code",
-        "opencode",
-        "gemini"
-      ],
-      "files": [
-        "SKILL.md",
-        "references/provenance.json",
+        "references/multiple-servers.md",
         "references/scg-operations.md",
+        "references/scg-provenance.json",
         "references/setup.md",
         "scripts/ssh-connect",
-        "templates/cpu.sbatch",
-        "templates/gpu-p100-smoke.sbatch",
+        "templates/scg-cpu.sbatch",
+        "templates/scg-gpu-p100-smoke.sbatch",
         "tests/test_connection_helper.py"
       ]
     },

@@ -4,6 +4,7 @@ No cluster access, credentials, or personal configuration is used.
 """
 
 import os
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 import pty
 import shutil
@@ -104,9 +105,9 @@ class ConnectionHelperTests(unittest.TestCase):
         self.master_socket.close()
         self.temp.cleanup()
 
-    def run_helper(self, *arguments: str) -> subprocess.CompletedProcess:
+    def run_helper(self, *arguments: str, host: str = "lab-cluster") -> subprocess.CompletedProcess:
         return subprocess.run(
-            ["bash", str(HELPER), "--host", "lab-cluster", *arguments],
+            ["bash", str(HELPER), "--host", host, *arguments],
             env=self.env,
             capture_output=True,
             text=True,
@@ -121,6 +122,48 @@ class ConnectionHelperTests(unittest.TestCase):
         result = self.run_helper("--non-interactive")
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn("SSH connection verified", result.stdout)
+        self.assert_no_authentication()
+
+    def test_concurrent_servers_use_separate_real_openssh_sockets(self) -> None:
+        if not self.env["TEST_REAL_SSH"]:
+            self.skipTest("OpenSSH unavailable")
+        self.env.update(TEST_REAL_CONFIG="yes", TEST_AUTO_SOCKET="yes")
+        with tempfile.TemporaryDirectory(prefix="ss-", dir="/tmp") as directory:
+            state = Path(directory).resolve()
+
+            def connect(host):
+                return self.run_helper(
+                    "--user", "sameuser", "--socket-dir", str(state),
+                    "--non-interactive", "--command", "hostname", host=host
+                )
+
+            with ThreadPoolExecutor(max_workers=2) as executor:
+                results = list(executor.map(connect, ["scg.example.org", "sherlock.example.org"]))
+            for result in results:
+                self.assertEqual(result.returncode, 0, result.stderr)
+                self.assertEqual(result.stdout, "remote-output\n")
+            sockets = set(state.glob("cm-*"))
+            self.assertEqual(len(sockets), 2)
+            for host in ["scg.example.org", "sherlock.example.org"]:
+                result = connect(host)
+                self.assertEqual(result.returncode, 0, result.stderr)
+            self.assertEqual(set(state.glob("cm-*")), sockets)
+        self.assert_no_authentication()
+
+    def test_host_and_account_combinations_remain_separate(self) -> None:
+        if not self.env["TEST_REAL_SSH"]:
+            self.skipTest("OpenSSH unavailable")
+        self.env.update(TEST_REAL_CONFIG="yes", TEST_AUTO_SOCKET="yes")
+        with tempfile.TemporaryDirectory(prefix="ss-", dir="/tmp") as directory:
+            state = Path(directory).resolve()
+            for host in ["scg.example.org", "sherlock.example.org"]:
+                for username in ["user_one", "user_two"]:
+                    result = self.run_helper(
+                        "--user", username, "--socket-dir", str(state),
+                        "--non-interactive", host=host
+                    )
+                    self.assertEqual(result.returncode, 0, result.stderr)
+            self.assertEqual(len(list(state.glob("cm-*"))), 4)
         self.assert_no_authentication()
 
     def test_missing_auth_never_prompts_noninteractively(self) -> None:
