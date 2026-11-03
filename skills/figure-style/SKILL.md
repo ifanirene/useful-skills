@@ -1,65 +1,100 @@
 ---
 name: figure-style
-description: Create or review scientific plots for data fidelity, legibility, and publication-ready output.
+description: Create, compose, revise, or review scientific figures, including multi-panel layouts, Nature formatting, consistent palettes, and figure legends.
 license: Apache-2.0
 ---
 
-# Scientific Figure Style
+# Scientific Figures
 
-Produce a scientifically faithful, legible plot in the requested format and
-style. For a small revision, inspect its source variant and change the requested
-presentation; preserve the analytical meaning unless the user requests otherwise.
+Deliver a scientifically faithful, legible figure and an accurate legend in the
+requesting project's output location. This skill covers individual plots and
+multi-panel figures; it replaces `figure-composer`.
 
-## Correctness
+## Establish the task
 
-- Verify plotted values, categorical labels, thresholds, and claim titles against
-  the source. Qualify a claim that the plotted evidence does not support.
-- Excluded observations stay out of included-data summaries; if displayed, mark
-  and explain their status. Distinguish missing measurements from zero.
-- Identify the unit of replication and sample size for summaries. Make protocol
-  or sampling differences visible when they affect comparisons.
-- Choose scales, baselines, statistics, and uncertainty intervals appropriate to
-  the data and inference. Do not truncate an axis just to fill space or use filled
-  bars on a log value axis. Label actual reference values and their meaning.
-- Define every series and visual encoding. Reuse entity colors consistently;
-  supplement color where needed for accessibility. Center a diverging scale on
-  the meaningful reference, not an arbitrary midpoint.
-- Match labels and leader endpoints to the observations they name. Keep repeated
-  quantitative claims consistent across panels, captions, and accompanying text.
+Use the question, source data or analysis outputs, intended audience, final size,
+and requested file formats to choose the work:
 
-## Conditional guidance
+- **Create or revise:** build a plot, preserving analytical meaning during a
+  presentation edit. Reuse established project settings unless asked to change them.
+- **Compose:** plan and assemble related panels; read
+  [composition.md](references/composition.md) before choosing their layout.
+- **Review:** inspect the source, legend, and final export; fix evidenced defects
+  within the requested scope. An image alone cannot establish numerical fidelity.
 
-For chart choice or redesign, consult the relevant sections of
-[design-guidance.md](references/design-guidance.md): §1 data checks, §2 labels,
-§3 axes, §4 color, §5 typography, §6 chart families, and §7 layout. Those section
-numbers also support existing `figure-composer` references. Treat numerical layout
-budgets and aesthetic choices as defaults; task requirements take precedence.
-A passing panel need not be redesigned to satisfy unrelated style preferences.
+For new publication figures without an established project style, use the bundled
+Nature preset. For Nature submission work, read
+[nature-guidance.md](references/nature-guidance.md) and verify the target journal,
+article type, and main/Extended Data requirements. Current journal/editor
+instructions take precedence. Record deliberate project overrides.
 
-Use `figure-composer` when the deliverable requires composing multiple panels and
-`paper-narrative` when revising the story across a paper's figures. A standalone
-plot does not require either workflow.
+## Preserve scientific meaning
 
-## Helpers and output
+- Verify plotted values, labels, filters, thresholds, and claims against source
+  results. Report a limitation when the evidence does not support the requested claim.
+- Keep excluded observations out of included-data summaries; identify them if
+  shown. Distinguish missing values from zero.
+- Identify the unit of replication and exact sample sizes. Choose statistical
+  summaries and uncertainty appropriate to the sampling design, including pairing
+  and nesting. Add inference only when supported by the analysis.
+- Select meaningful baselines and transformations; label contrasts and direction.
+  Preserve comparable scales and category order across related panels.
+- Keep repeated numerical claims consistent across figures, legends, and text.
 
-For Matplotlib work using the bundled defaults, inspect and explicitly import
-[kernel.py](kernel.py), then call `apply_figure_style` with the project's font,
-frame, and sizes. Preserve established styling for a targeted edit. Other plotting
-systems may implement the same requirements directly. Do not assume automatic
-helper loading or host-specific artifact tools.
+## Set visual defaults once
 
-The sidecar includes `focal_palette`, `bar_with_points`, `strip_with_median`,
-`end_of_line_labels`, `panel_letter`, `set_frame`, and `panel_crops`. Inspect the
-relevant signature before use, especially crop coordinates and export settings.
+Read [colors.md](references/colors.md) when assigning categories or continuous
+scales. Keep one project mapping from entity to color; reuse it in schematics and
+data panels. Use explicit keys or labels and an additional encoding when needed.
 
-## §9.2 Rendered-output review
+[house_style.yaml](house_style.yaml) separates official Nature constraints from
+local defaults. For Matplotlib, inspect and explicitly import
+[nature_style.py](nature_style.py); use `load_style`, `apply_style`, `figsize_mm`,
+`panel_label`, and `save_figure`. It requires Matplotlib and PyYAML. Pass project
+then figure overrides as explicit YAML paths; the most specific layer wins.
+The helper checks font availability rather than silently substituting a font.
 
-Render the final export and inspect it at intended display size for clipping,
-overlap, contrast, readable marks, and legend/leader correspondence. Use geometric
-checks for suspected collisions; they do not replace visual inspection. For a
-multi-panel export, inspect both individual panels and the composite. Fix defects
-and recheck affected areas, then stop when the requested artifact passes.
+The older [kernel.py](kernel.py) remains available for generic styles and plot
+helpers. Inspect signatures before use. For Nature work, apply the Nature preset
+after generic helpers so their defaults cannot overwrite it. Other plotting
+systems can implement the same specification directly.
 
-Keep editable output where the requested format permits it and link the result.
-State any unavailable visual validation; formatting checks do not establish
-scientific validity.
+For chart choice or a redesign, read only the relevant sections of
+[design-guidance.md](references/design-guidance.md). Its numerical layout budgets
+are suggestions; the requested endpoint and journal guidance take priority.
+
+## Write and verify the legend
+
+For a new or substantively changed publication figure, read
+[legends.md](references/legends.md), write a companion legend, and check it against
+every panel and the source analysis. For a small cosmetic edit, review the
+existing legend and update only affected descriptions.
+
+Design examples must point to real published Nature figure panels whose original
+artwork has been inspected. Give the paper, figure/panel, source link, and the
+specific design choice it illustrates. Synthetic test plots are not teaching
+examples. This package currently includes no verified published-panel examples.
+The adaptation sources and their limits are in [sources.md](references/sources.md).
+
+## Export and inspect
+
+Keep data graphics, text, and panel labels editable in the final vector output.
+Build related panels in one vector canvas when possible; independently rendered
+panels require a composition tool that preserves vectors. A PDF containing a
+flattened PNG is a raster preview. Retain the editable plotting source as well.
+
+Render the saved export and inspect both each panel and the composite at intended
+size: clipping, overlap, readable marks, contrast, shared scales, color identity,
+and correct legend/leader binding. Inspect PDF/SVG output as well as the PNG
+preview. Geometric checks help locate defects but do not replace viewing.
+
+Fix affected panels and recheck them and the composite. Stop when material
+defects are resolved; report remaining limitations explicitly. If independent
+review is useful and available, request findings supported by locations and
+evidence, allowing zero findings. Delegation is optional.
+
+Deliver the requested exports, plotting source/regeneration command, legend, and
+effective style/color mapping in the consuming project. State what was checked
+and which visual or scientific checks remain unavailable. Automated style checks
+do not validate the analysis or guarantee journal acceptance. Creating a figure
+does not authorize publishing it or starting an analysis-report workflow.

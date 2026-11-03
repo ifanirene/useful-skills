@@ -3,7 +3,7 @@
 Run this only after the user accepts the offer in `SKILL.md` step 6. It judges whether the
 figures carry the document's narrative: the figure order, the one claim each figure makes
 and its strength, and panels that are missing or sit in the wrong figure. It does not judge
-figure craft; `figure-style` and `figure-composer` own that.
+figure craft; `figure-style` owns that.
 
 Inputs: the finished text, the brief the mode built, and all figures as one deck (a PDF or
 a set of images).
@@ -63,7 +63,7 @@ Present the findings grouped as below. Change figures or text only where the use
   before proposing new work.
 - **Kill list:** demote or delete. Never kill counterevidence, a negative result, or a limit
   that changes how the message reads; demote a robustness check that does not change it.
-- **Rebuilding a figure:** only when the user asks, load `figure-composer` and hand it that
+- **Rebuilding a figure:** only when the user asks, load `figure-style` and hand it that
   figure's claim, moved-in panels, and data references.
 
 ## 4. Converge

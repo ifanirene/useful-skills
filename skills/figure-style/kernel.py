@@ -209,7 +209,7 @@ def panel_crops(fig, dpi=None, pad_px=6, bbox_inches=None, pad_inches=None):
     For §3.4 composites (abutting subplots sharing an axis, letter on the
     leftmost only) the crop unions in letterless ``sharex``/``sharey`` siblings
     on the same grid row/col so the whole composite is covered. When no axes
-    carries a panel letter (standalone plot, or a figure-composer sub-agent),
+    carries a panel letter (standalone plot, or an independently rendered panel),
     falls back to one crop per axes keyed by index.
 
     ``bbox_inches`` mirrors ``Figure.savefig`` semantics: ``None`` means

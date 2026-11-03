@@ -31,7 +31,7 @@ small and reduces accidental instruction conflicts.
 
 - Scientific mechanisms and article illustrations with controlled style: `baoyu-article-illustrator`
 - One scientific plot or plot QA: `skills/figure-style/SKILL.md`
-- One multi-panel scientific figure: `figure-composer`, then `figure-style`
+- One multi-panel scientific figure: `figure-style` (composition workflow)
 - Make research writing of any type follow one question and one answer, by polishing the
   author's draft or rewriting it: `paper-narrative` (its optional figure review routes to
   the figure skills)

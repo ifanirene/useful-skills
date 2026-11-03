@@ -1,6 +1,5 @@
 # Every active skill in the repository.
 figure-style
-figure-composer
 paper-narrative
 literature-review
 research-paper-analysis-writing

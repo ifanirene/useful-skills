@@ -1,0 +1,55 @@
+# Authored locally from public specifications and attributed design ideas.
+# Provenance and adaptation boundaries: references/sources.md.
+schema_version: 1
+profile: nature-main
+checked_on: '2026-10-26'
+sources:
+  panels: https://research-figure-guide.nature.com/figures/building-and-exporting-figure-panels/
+  artwork: https://research-figure-guide.nature.com/figures/preparing-figures-our-specifications/
+  legends: https://www.nature.com/nature/for-authors/initial-submission
+
+# Nature main-figure requirements; recheck for other journals and display types.
+requirements:
+  widths_mm: [89, 183]
+  max_height_mm: 170
+  ordinary_text_pt: [5, 7]
+  panel_label_pt: 8
+  panel_label_case: lower
+  font_families: [Arial, Helvetica]
+  photographic_min_dpi: 300
+  photographic_target_dpi: 450
+  legend_words_less_than: 250
+  editable_vector_text: true
+
+# Local defaults within those constraints; these are not journal mandates.
+defaults:
+  font: Arial
+  body_pt: 7
+  axis_label_pt: 7
+  tick_label_pt: 6
+  legend_pt: 6
+  panel_label_pt: 8
+  axis_line_pt: 0.5
+  tick_line_pt: 0.5
+  data_line_pt: 1.0
+  marker_pt: 3
+  raster_dpi: 450
+  display_dpi: 150
+  frame: open
+  grid: false
+  pdf_fonttype: 42
+  formats: [pdf, png]
+
+# Explicit defaults, not a compulsory Nature palette. Project mappings win.
+colors:
+  categorical: ['#0072B2', '#E69F00', '#009E73', '#CC79A7', '#D55E00', '#56B4E9', '#000000']
+  available_yellow: '#F0E442'
+  text: '#000000'
+  background: '#FFFFFF'
+  context: '#B8B8B8'
+  focal: '#0072B2'
+  sequential: cividis
+  diverging: RdBu_r
+  diverging_center: 0
+  missing: '#D9D9D9'
+  entities: {}

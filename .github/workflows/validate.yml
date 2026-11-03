@@ -8,6 +8,20 @@ permissions:
   contents: read
 
 jobs:
+  figure-style-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install figure test dependencies
+        run: python -m pip install 'matplotlib>=3.8,<4' 'PyYAML>=6,<7' 'Pillow>=10,<13' 'PyMuPDF>=1.24,<2'
+      - name: Test figure export and style behavior
+        env:
+          MPLBACKEND: Agg
+        run: python -m unittest discover -s skills/figure-style/tests -v
+
   validate:
     runs-on: ubuntu-latest
     steps:

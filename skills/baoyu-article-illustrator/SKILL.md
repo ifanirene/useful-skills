@@ -38,7 +38,7 @@ comparison for conditions, or infographic for a mechanism.
 - Distinguish established mechanisms from hypotheses; causal arrows must match the evidence.
 - Keep palette, line treatment, label conventions, and reference images consistent across a series.
 - Never invent measurements, microscopy, statistical support, or experimental outcomes.
-- Route quantitative plots to `figure-style` and figure assembly to `figure-composer`.
+- Route quantitative plots to `figure-style` and figure assembly to `figure-style`.
   Generated illustration is a conceptual schematic, not experimental evidence.
 
 ## Configuration and execution

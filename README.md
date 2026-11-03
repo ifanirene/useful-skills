@@ -26,8 +26,7 @@ project context stay outside the public registry.
 | [`compute-scg`](skills/compute-scg/SKILL.md) | SCG SSH onboarding, Slurm CPU/GPU jobs, resource discovery and project environments |
 | [`intake-skill`](skills/intake-skill/SKILL.md) | Synced Apple Voice Memos transcription and daily reports |
 | [`baoyu-article-illustrator`](skills/baoyu-article-illustrator/SKILL.md) | Scientific and article illustrations with controlled style, palette, and references |
-| [`figure-style`](skills/figure-style/SKILL.md) | Scientific plots with source fidelity and rendered-output checks |
-| [`figure-composer`](skills/figure-composer/SKILL.md) | Multi-panel scientific figure planning, composition, and review |
+| [`figure-style`](skills/figure-style/SKILL.md) | Scientific plots and multi-panel figures with Nature guidance, palettes, legends, and rendered-output checks |
 | [`paper-narrative`](skills/paper-narrative/SKILL.md) | Question-first narrative for any research writing: `polish` the author's draft or `rewrite` it for delivery |
 | [`literature-review`](skills/literature-review/SKILL.md) | Verified paper lookup, method comparison, and evidence synthesis |
 | [`research-paper-analysis-writing`](skills/research-paper-analysis-writing/SKILL.md) | Reader-first technical paper analysis with evidence layers and ecosystem positioning |

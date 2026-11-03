@@ -5,8 +5,7 @@ cannot be reconstructed safely from the current files alone.
 
 | Skill | Recorded provider | License | Upstream source |
 | --- | --- | --- | --- |
-| `figure-style` | Anthropic | Apache-2.0 | Owner confirmation required |
-| `figure-composer` | Anthropic | Apache-2.0 | Owner confirmation required |
+| `figure-style` | Historical Anthropic attribution; locally extended | Apache-2.0 | Historical URL unresolved; Nature and Engreitz design sources attributed in the skill |
 | `paper-narrative` | Anthropic | Apache-2.0 | Owner confirmation required |
 | `literature-review` | Anthropic | Apache-2.0 | Owner confirmation required |
 | `research-paper-analysis-writing` | grapeot | MIT (README declaration) | `context-infrastructure/rules/skills/workflow_research_paper_survey_writing.md` at `3f62b8b` |
@@ -21,10 +20,19 @@ cannot be reconstructed safely from the current files alone.
 | `online-media` | grapeot | MIT | `https://github.com/grapeot/online-media-skill` at `794ff6c` |
 | `presentation` | grapeot | MIT | `https://github.com/grapeot/presentation_skill` at `f9881ad` |
 
-These four Skills were already present before the registry conversion. Their files identify
+The original four Skills (including the now-retired `figure-composer`) were already
+present before the registry conversion. Their files identify
 an Apache-2.0 license, and the earlier manifest identified Anthropic as origin, but no precise
 upstream URLs were retained. The registry records that gap explicitly instead of inventing
 links.
+
+On 2026-10-26, `figure-style` absorbed multi-panel composition and `figure-composer`
+was removed from active discovery. The new Nature style preset and helper are
+authored locally from attributed public specifications. The EngreitzLabAgents
+pin `bd501c4ec697a67fe94c6e7f6ed33ad5e8ae733f` supplied design/legend ideas;
+its unresolved license is not represented as Apache-2.0 permission. No Engreitz
+source code, example prose, unpublished data, or artwork is vendored. See
+[the skill's source record](../skills/figure-style/references/sources.md).
 
 Before publishing a release that claims traceable upstream provenance, the repository owner
 should identify and verify those URLs or amend the provider record based on original export

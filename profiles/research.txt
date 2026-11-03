@@ -3,4 +3,3 @@ literature-review
 research-paper-analysis-writing
 paper-narrative
 figure-style
-figure-composer

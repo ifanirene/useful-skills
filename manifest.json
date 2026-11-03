@@ -20,7 +20,7 @@
       "path": "skills/figure-style",
       "entrypoint": "SKILL.md",
       "category": "scientific-visualization",
-      "description": "Create or review scientific plots for data fidelity, legibility, and publication-ready output.",
+      "description": "Create, compose, revise, and review scientific figures with Nature guidance, consistent palettes, legends, and editable exports.",
       "status": "active",
       "license": "Apache-2.0",
       "canonical_url": "https://github.com/ifanirene/useful-skills/tree/main/skills/figure-style",
@@ -28,7 +28,7 @@
         "type": "imported",
         "provider": "Anthropic",
         "upstream_url": null,
-        "review_note": "Imported before registry conversion; the precise upstream URL still needs owner confirmation."
+        "review_note": "Imported before registry conversion; the precise upstream URL still needs owner confirmation. Locally updated 2026-10-26: absorbs figure-composer; official Nature requirements, original style/export helper, explicit palettes, and independently authored guidance informed by EngreitzLabAgents bd501c4. No upstream Engreitz text/code/artwork is vendored; its license remains unresolved. See references/sources.md and review/figure-style-2026-10-26.md."
       },
       "compatibility": [
         "agent-skills",
@@ -37,33 +37,16 @@
       ],
       "files": [
         "SKILL.md",
+        "house_style.yaml",
         "kernel.py",
-        "references/design-guidance.md"
-      ]
-    },
-    {
-      "name": "figure-composer",
-      "path": "skills/figure-composer",
-      "entrypoint": "SKILL.md",
-      "category": "scientific-visualization",
-      "description": "Plan, render, compose, and review a publication-grade multi-panel scientific figure.",
-      "status": "active",
-      "license": "Apache-2.0",
-      "canonical_url": "https://github.com/ifanirene/useful-skills/tree/main/skills/figure-composer",
-      "source": {
-        "type": "imported",
-        "provider": "Anthropic",
-        "upstream_url": null,
-        "review_note": "Imported before registry conversion; the precise upstream URL still needs owner confirmation."
-      },
-      "compatibility": [
-        "agent-skills",
-        "claude-code",
-        "codex"
-      ],
-      "files": [
-        "SKILL.md",
-        "kernel.py"
+        "nature_style.py",
+        "references/colors.md",
+        "references/composition.md",
+        "references/design-guidance.md",
+        "references/legends.md",
+        "references/nature-guidance.md",
+        "references/sources.md",
+        "tests/test_nature_style.py"
       ]
     },
     {

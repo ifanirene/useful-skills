@@ -186,7 +186,7 @@ narrative, whether each figure makes one claim at the right strength, and which 
 missing or sit in the wrong figure. Do not run it without a yes; a request for it in the
 user's original message counts as a yes. On a yes, read
 [references/figure-review.md](references/figure-review.md). Hand a figure to
-`figure-composer` only when the user asks for that figure to be rebuilt.
+`figure-style` only when the user asks for that figure to be rebuilt.
 
 ## Hard constraints
 

@@ -14,13 +14,9 @@ breadth and output length to the question; verify both citation identity and cla
 
 ### [`figure-style`](figure-style/SKILL.md)
 
-Use for a scientific plot or figure review. Keep source fidelity and rendered-output checks
-in scope; consult detailed design guidance only for the chart or edit at hand.
-
-### [`figure-composer`](figure-composer/SKILL.md)
-
-Use for one multi-panel scientific figure. It routes panel work through `figure-style` and
-adds figure-level planning, composition, and adversarial review.
+Use for individual plots, multi-panel composition, figure revision, and review. Includes
+Nature guidance, a shared style/color configuration, legend writing, editable exports,
+and rendered-output checks. Read composition and other references only when needed.
 
 ### [`baoyu-article-illustrator`](baoyu-article-illustrator/SKILL.md)
 
@@ -42,7 +38,7 @@ Use to make any research writing (a result write-up, report, progress report, ma
 or grant section) read as one question, one answer, and a chain of steps a reader can
 follow. `polish` edits structure and clarity in the author's voice; `rewrite` reorganizes
 for delivery. When the input has figures, it offers a figure review that can hand figures
-to `figure-composer`. Use `research-paper-analysis-writing` for other people's papers.
+to `figure-style`. Use `research-paper-analysis-writing` for other people's papers.
 
 ## Agent engineering and skill authoring
 
@@ -179,11 +175,10 @@ guidance. Lab account and personal path values stay in private overlays.
 ## Common combinations
 
 - Standalone plot: `figure-style`
-- Multi-panel figure: `figure-composer` + `figure-style`
+- Multi-panel figure: `figure-style` (composition workflow)
 - Clearer research draft in the author's voice: `paper-narrative` (`polish`)
 - Research write-up restructured for the reader: `paper-narrative` (`rewrite`)
-- Manuscript figure revision: `paper-narrative` (figure review) → `figure-composer` →
-  `figure-style`
+- Manuscript figure revision: `paper-narrative` (figure review) → `figure-style`
 - Literature-grounded scientific claim: `literature-review`, then the relevant writing or
   visualization skill
 - Reader-first paper analysis: `research-paper-analysis-writing` + `literature-review`

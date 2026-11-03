@@ -1,11 +1,13 @@
 # Figure Design Guidance
 
 Read only sections relevant to the current chart or edit. Original section
-numbers remain for callers such as figure-composer. The skill entrypoint defines
+numbers remain for older project references. The skill entrypoint defines
 correctness requirements; numeric layout limits and stylistic prescriptions below
 are defaults, not universal acceptance gates. Follow the requested venue and
 project style. In particular, preserve a meaningful baseline and do not cut an
 axis or force a percentage of occupied space merely to satisfy a layout target.
+For Nature work, use the current [Nature guidance](nature-guidance.md),
+[color defaults](colors.md), and [composition workflow](composition.md).
 
 ## §1 Data fidelity & self-consistency
 
@@ -49,13 +51,10 @@ Define what it measures and use that value everywhere.
 The figure shows the pattern; the **caption** carries the context. Design for a
 general scientific reader, not the author.
 
-**2.1 Floor (non-removable).** Every distinct mark, series, glyph, or comparator
-must be identifiable from the figure alone. The caption explains *why it
-matters*, not *what it is*. A label is non-removable if deleting it leaves a
-reader asking "what is that?"; it is removable only if the question becomes "why
-is that there?". Comparator labels name the thing ("prior method", "no joint
-training"), never a bare role word ("baseline", "previous"). Any term a general
-scientist can't parse gets a one-word gloss.
+**2.1 Identification.** Make every distinct series, symbol, and comparator
+identifiable from figure plus legend. Put essential visual keys in the figure
+when feasible. Comparator labels name the method/condition instead of an
+ambiguous version label. Explain unfamiliar terms in the companion legend.
 
 **2.2 Ceiling.** Per panel: title + axis labels + tick labels + series identity
 (labeled once per row of small multiples) + at most 2–3 result annotations.
@@ -66,10 +65,10 @@ floor, not budget.
 **2.3 Move to the caption:** n=, what's-held-fixed, abbreviation expansions,
 non-comparable footnotes, exclusion rationale, methodological caveats.
 
-**2.4 Titles are takeaways.** A reader seeing only the title knows what the
-panel shows. "Robust to gene dropout" passes; "Fewer genes" fails. Test: read it
-aloud cold — if the listener asks "fewer genes *what*?", rewrite. For a row of
-small multiples that vary one thing, drop per-panel titles for one row-header.
+**2.4 Titles and headers.** Put a manuscript figure's full title in its legend.
+Use short condition/comparison headers inside panels where useful. For reports
+and slides, a supported finding can serve as an on-plot title. For a row of
+small multiples, consider a shared header rather than repeated titles.
 
 **2.5 Value-on-mark only for the headline number** — the one a reader would
 quote. Everything else is read off the axis.
@@ -100,9 +99,10 @@ shows tick labels once (leftmost / bottommost panel); interior panels keep ticks
 but drop labels. When the panels share a y-axis and differ only by x-variable,
 render them as abutting subplots (`wspace≤0.06`) with one row-header title.
 
-**3.5 Fill the box.** A panel's data envelope occupies ≥75 % of its allotted
-rectangle. If a panel's natural aspect leaves dead bands, reshape the grid
-(rowspan, stacked complementary panels) — don't pad the panel.
+**3.5 Use space deliberately.** Fit slots to their evidence, labels, and natural
+aspect ratios. Adjust the grid when there is wasted space; retain whitespace
+that supports legibility or meaningful shared baselines. There is no occupancy
+percentage requirement.
 
 **3.6 Direction of goodness.** When higher- or lower-is-better is not obvious
 from the axis label, place a small upright cue ("higher = better") in the
@@ -110,39 +110,39 @@ margin — once per row of panels, never per panel, and never only in the captio
 A directional glyph embedded in rotated text rotates with it; set the cue
 upright.
 
-**3.7 Physical width.** A single-row figure at 300 dpi fits the venue's
-double-column width. Adding a schematic or labels does not push data panels narrower than
-they were before.
+**3.7 Physical width.** Build at the target physical width and check the saved
+page dimensions. Raster DPI governs sampling, not vector canvas width. Allocate
+space for any new schematic without making existing text/marks unreadable.
 
 ---
 
 ## §4 Color
 
-**4.1 Threading.** Once a color is bound to an entity (a method, a feature, a
-condition), reuse that exact color for every mark representing that entity
-across the figure — line, fill, marker, text, heatmap row. Color *is* the
-cross-reference; a reader should never have to consult a legend twice.
+**4.1 Threading.** Bind entity colors once and reuse them for lines, fills,
+markers, and annotation strips across figures. Default to black text with
+swatches or keylines for Nature work. Explicit keys supplement color identity.
 
 **4.2 Limit hues.** Use as few distinct hues as the data require. When the
 figure compares a focal series against others, make the focal series visually
 dominant (saturated, heavier weight) and render comparators with lower visual
-weight (desaturated, lighter, or thinner). The focal hue must not coincide with
-any hue in a categorical palette used in the same figure. The focal series must
+weight (desaturated, lighter, or thinner). Keep the focal entity's assigned hue;
+avoid reusing it for an unrelated meaning in the same figure. The focal series must
 remain identifiable even when its mark is zero-width or coincident with others —
 via outline, marker, or a light tinted band.
 
 **4.3 Hierarchical categories.** When categories nest (groups within groups),
 the outer level picks the hue family and the inner level samples within it.
 
-**4.4 Continuous and diverging.** Use a perceptually uniform sequential map for
-generic continuous values; a single-hue ramp for ordinal rank or size; a
-diverging map for signed quantities — **always** centered at the semantically
-meaningful zero (0, 1.0, or median), never the data midpoint.
+**4.4 Continuous and diverging.** Use a perceptually suitable sequential map
+for ordered magnitude, a diverging map around a meaningful reference, and a
+cyclic map for periodic quantities. The null is 0 for a log ratio and 1 for a
+ratio. A data median is a center only when deviation from that median is the
+stated question. Normalize comparable panels identically.
 
 **4.5 CVD safety.** Never rely on a red/green contrast for a binary or opposing
-distinction. Any binary pair should remain distinguishable in deuteranopia
-simulation. Reserve one alarm hue for error/anomaly/perturbation marks and do
-not reuse it as a data-series color.
+distinction. Check actual marks under relevant color-vision simulations. Use
+additional encodings where necessary. A perturbation condition is a data series;
+its color need not imply an alarm or disease.
 
 **4.6 Two palettes, two legends.** When a figure uses two categorical color
 systems, each legend sits adjacent to the first panel where its palette applies.
@@ -151,15 +151,17 @@ systems, each legend sits adjacent to the first panel where its palette applies.
 
 ## §5 Typography
 
-**5.1 Sentence titles.** A panel title states the comparison in plain language,
-regular weight, left-aligned. Metric names go on the axis, not in the title.
+**5.1 Headers.** A necessary panel header identifies the condition/comparison
+in plain language, regular weight, left-aligned. A manuscript figure title
+belongs in the legend; finding titles on plots are appropriate for some reports.
 
 **5.2 Role-mapped size ladder.** A figure uses **at most three** font sizes,
 mapped to *role* not space: titles/axis-labels/series-identity at the base size;
 legend/annotation text one step down; tick labels one step further. Panel
 letters are the only exception (bold, larger). If a label doesn't fit at its
 role's size, fix the layout or shorten the text — don't reach for an
-intermediate size. `apply_figure_style(sizes=(8,7,6))` sets the ladder.
+intermediate size. The generic `apply_figure_style(sizes=(8,7,6))` is not the
+Nature preset; use `nature_style.py` with 5–7 pt ordinary text and 8 pt letters.
 
 **5.3 Nomenclature.** Species, gene, and variable names that scientific
 convention italicizes are italicized. Abbreviated codes inherit the rule; expand
@@ -188,11 +190,12 @@ target venue's convention; `panel_letter(ax, 'a', case=...)` handles either.
 Chart choice follows n: jittered strip with a median tick for small n; box or
 violin for large n; bar + overlaid raw points or bar + interval when the mean is
 the message. The `errorbar='ci95'` helper uses a t-based interval for the mean; check its
-assumptions and the independent replication unit before using it. Error bars
-and raw-point overlays are alternatives — showing both is usually redundant. A
+assumptions and the independent replication unit before using it. Raw points
+and summary uncertainty can both be useful: one shows observations, the other
+precision of an estimate. Define both in the legend. A
 category absent from a group is marked (`n.d.`, `—`, or a hatched ghost) at its
-slot; an empty slot reads as zero. A zero-valued bar
-gets a visible stub or dot at the baseline.
+slot; an empty slot can be confused with zero. Identify a zero-valued bar with
+a dot or label at zero; a positive-height stub would change its quantitative meaning.
 
 **6.2 Single-observation categories.** A filled dot with a thin neutral stem to
 the semantic zero (lollipop). Value labels sit beside the dot.
@@ -207,8 +210,9 @@ identical across series, drawn below the raw points in z-order.
 stack them as small panels with a shared x-axis or use a ridgeline. Overlay only
 when the separation is visually clear.
 
-**6.5 Matrices.** When a heatmap is small enough to read (< ~200 cells), print
-the value in every cell. State the threshold once in the colorbar label.
+**6.5 Matrices.** Add cell values only when exact numbers matter and remain
+legible. Define normalization, limits, reference, and any saturation. Mark
+missing values distinctly from zero. Linked panels use a common row order.
 
 **6.6 Embeddings.** Dimensionality-reduction scatters (UMAP, t-SNE, PCA) drop
 ticks and tick labels; a small corner arrow pair names the axes. Clusters are
@@ -221,8 +225,8 @@ are translucent spans registered in the legend.
 **6.8 Insets.** Connect a detail inset to its source region visibly — a bounding
 box with connector lines, or a translucent wedge.
 
-**6.9 Label the extremes.** On a scatter of named observations, direct-label at
-least the maximum, minimum, and any flagged point with a thin leader line. After
+**6.9 Label relevant observations.** On a scatter of named observations, label
+points needed for the question; extremes need no automatic annotation. After
 rendering, verify every leader endpoint terminates within one marker radius of
 the row it names.
 

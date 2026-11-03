@@ -1,5 +1,32 @@
 # Changelog
 
+## 2026-11-03
+
+- Revalidated the pending `figure-style` consolidation and related
+  `paper-narrative` and `baoyu-article-illustrator` routing updates. All eight
+  figure-helper tests, registry checks, public-content scan, and local-reference
+  checks pass.
+- Synchronized stale installed skill copies with the canonical library, retaining
+  backups outside discovery; archived the retired installed `figure-composer`.
+- Owner explicitly requested a direct commit and push to `main` without a human
+  review step, superseding the earlier local-only instruction for this update.
+  This exception does not change the registry's default review policy.
+
+## 2026-10-26
+
+- Expanded `figure-style` to cover individual plots, multi-panel composition,
+  revision, and review; retired `figure-composer` and redirected current routing.
+- Added dated official Nature guidance, an original `house_style.yaml` and
+  fixed-canvas exporter, explicit project color mappings, legend-writing guidance,
+  and attributed adaptations of Engreitz composition ideas. No upstream Engreitz
+  implementation or private examples are included.
+- Removed the proposed synthetic teaching examples at the owner's request.
+  Design/legend examples require real Nature artwork inspected at its source.
+  No such examples are included in this update.
+- Owner initially instructed a local edit on the current branch, overriding the
+  normal review-branch workflow. Direct commit and publication were subsequently
+  authorized on 2026-11-03. See `review/figure-style-2026-10-26.md` for checks and limits.
+
 ## 2026-10-20
 
 - Added owner-requested `living-wiki`. It generalizes an LLM-maintained project wiki: one current
