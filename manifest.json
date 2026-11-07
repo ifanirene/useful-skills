@@ -673,6 +673,33 @@
         "scripts/test_ouroboros.py",
         "templates/config.toml"
       ]
+    },
+    {
+      "name": "assemble-figure-in-illustrator",
+      "path": "skills/assemble-figure-in-illustrator",
+      "entrypoint": "SKILL.md",
+      "category": "scientific-visualization",
+      "description": "Assemble and locally revise native Illustrator figures with selective rasterization, editable annotations and saved-file inspection; invokes figure-style.",
+      "status": "active",
+      "license": "NOASSERTION",
+      "canonical_url": "https://github.com/ifanirene/useful-skills/tree/main/skills/assemble-figure-in-illustrator",
+      "source": {
+        "type": "original",
+        "provider": "ifanirene",
+        "upstream_url": null,
+        "review_note": "Owner requested separate local skill creation on 2026-11-07, invoking unchanged figure-style. Independently authored; no external code copied. Sources and limits in references/sources.md. No redistribution license assigned; end-to-end functional and human privacy review pending before publication."
+      },
+      "compatibility": [
+        "agent-skills",
+        "codex",
+        "claude-code"
+      ],
+      "files": [
+        "SKILL.md",
+        "references/illustrator-operations.md",
+        "references/plot-import.md",
+        "references/sources.md"
+      ]
     }
   ]
 }

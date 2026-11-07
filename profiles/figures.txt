@@ -2,3 +2,4 @@
 figure-style
 paper-narrative
 baoyu-article-illustrator
+assemble-figure-in-illustrator

@@ -1,6 +1,7 @@
 # Assemble figures in Illustrator: design discussion
 
-Status: discussion only; no new skill or registry entry has been created.
+Status: implemented locally after investigator approval to create the skill.
+See ../skills/assemble-figure-in-illustrator/SKILL.md. No publication authorized.
 The investigator requested a separate skill that calls the unchanged figure-style.
 Previous uncommitted Illustrator additions to figure-style were withdrawn.
 
@@ -42,3 +43,11 @@ Files should be changed directly, with no patch-file delivery.
 
 No new functional skill test has been performed. This document records design
 choices for discussion, not an installed or completed capability.
+
+## Implementation checks
+
+Passed: frontmatter validation, registry consistency (24 skills and 24 profiles),
+public-content scan (157 text files), local reference resolution and whitespace.
+All figure-style files remain unchanged. Codex discovery points to the canonical
+new skill. No executable helper or third-party code is bundled. A fresh end-to-end
+Illustrator run and human functional/privacy review remain unperformed.

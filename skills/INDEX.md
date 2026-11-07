@@ -18,6 +18,12 @@ Use for individual plots, multi-panel composition, figure revision, and review. 
 Nature guidance, a shared style/color configuration, legend writing, editable exports,
 and rendered-output checks. Read composition and other references only when needed.
 
+### [`assemble-figure-in-illustrator`](assemble-figure-in-illustrator/SKILL.md)
+
+Use for native Adobe Illustrator assembly and local panel replacement. Calls figure-style
+for plotting; adds selective rasterization, useful object grouping, JSX/UI operations
+and saved-file structure and whole-page review.
+
 ### [`baoyu-article-illustrator`](baoyu-article-illustrator/SKILL.md)
 
 Use for scientific mechanisms, experimental workflows, and article illustrations with

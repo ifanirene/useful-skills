@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-11-07
+
+- Added assemble-figure-in-illustrator as a separate local workflow invoking the
+  unchanged figure-style. Covers source-based local replacements, selective
+  rasterization, native grouping, JSX/UI operations and saved-file verification.
+- Registered discovery and documented source/reuse limits. No third-party code
+  was imported. End-to-end Illustrator evaluation and human privacy review remain
+  pending before publication. Local direct edits follow the owner instruction.
+
 ## 2026-11-03
 
 - Unified remote computing under `remote-compute-ssh`. SCG details and CPU/GPU
