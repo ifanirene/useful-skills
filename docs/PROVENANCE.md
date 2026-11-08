@@ -135,3 +135,11 @@ the file migration map are in `references/scg-provenance.json` under the survivi
 skill, with the semantic audit in `review/remote-compute-unification-2026-11-03.md`.
 No upstream repository URL or redistribution license has been established;
 recorded as `NOASSERTION`. Personal paths and lab accounts remain in ignored overlays.
+
+## Locally consolidated scientific writing workflows
+
+`methods-writing` and `reviewer-response` were consolidated from existing local
+installations at the owner’s request on 2026-11-07. Their earlier provenance and
+redistribution terms are unresolved; both are recorded as `NOASSERTION`. The
+library retains reusable instructions only. Unpublished article examples, model
+consultation packets and project records remain outside the public package.

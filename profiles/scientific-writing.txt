@@ -1,0 +1,4 @@
+# Scientific paper prose and reviewer responses.
+paper-narrative
+methods-writing
+reviewer-response

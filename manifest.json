@@ -28,7 +28,7 @@
         "type": "imported",
         "provider": "Anthropic",
         "upstream_url": null,
-        "review_note": "Imported before registry conversion; the precise upstream URL still needs owner confirmation. Locally updated 2026-10-26: absorbs figure-composer; official Nature requirements, original style/export helper, explicit palettes, and independently authored guidance informed by EngreitzLabAgents bd501c4. No upstream Engreitz text/code/artwork is vendored; its license remains unresolved. See references/sources.md and review/figure-style-2026-10-26.md."
+        "review_note": "Imported before registry conversion; the precise upstream URL still needs owner confirmation. Locally updated 2026-10-26: absorbs figure-composer; official Nature requirements, original style/export helper, explicit palettes, and independently authored guidance informed by EngreitzLabAgents bd501c4. No upstream Engreitz text/code/artwork is vendored; its license remains unresolved. See references/sources.md and review/figure-style-2026-10-26.md. Updated 2026-11-07: manuscript-style legend guidance, interpretation versus implementation detail, contextual sample-size reporting and selective external review. Owner authorized direct local edits; no publication or unrelated registry change."
       },
       "compatibility": [
         "agent-skills",
@@ -679,7 +679,7 @@
       "path": "skills/assemble-figure-in-illustrator",
       "entrypoint": "SKILL.md",
       "category": "scientific-visualization",
-      "description": "Assemble and locally revise native Illustrator figures with selective rasterization, editable annotations and saved-file inspection; invokes figure-style.",
+      "description": "Assemble and locally revise native Illustrator figures, preserving original appearance for new-data redraws, with editable annotations and saved-file inspection; invokes figure-style.",
       "status": "active",
       "license": "NOASSERTION",
       "canonical_url": "https://github.com/ifanirene/useful-skills/tree/main/skills/assemble-figure-in-illustrator",
@@ -699,6 +699,58 @@
         "references/illustrator-operations.md",
         "references/plot-import.md",
         "references/sources.md"
+      ]
+    },
+    {
+      "name": "methods-writing",
+      "path": "skills/methods-writing",
+      "entrypoint": "SKILL.md",
+      "category": "scientific-writing",
+      "description": "Draft and revise scientific Methods with matched-source provenance, concise explanatory prose, and reproducibility checks.",
+      "status": "active",
+      "license": "NOASSERTION",
+      "canonical_url": "https://github.com/ifanirene/useful-skills/tree/main/skills/methods-writing",
+      "source": {
+        "type": "local",
+        "provider": "Local installed workflow",
+        "upstream_url": null,
+        "review_note": "Consolidated from the owner-maintained local installation on 2026-11-07 at the owner’s request. Earlier source history and redistribution license are unresolved; no external upstream or license is inferred. Only reusable instructions are retained; private article examples and review packets remain in the consuming project."
+      },
+      "compatibility": [
+        "agent-skills",
+        "claude-code",
+        "codex"
+      ],
+      "files": [
+        "SKILL.md",
+        "agents/openai.yaml",
+        "references/compliance-core.md",
+        "references/computational-methods.md",
+        "references/style-patterns.md"
+      ]
+    },
+    {
+      "name": "reviewer-response",
+      "path": "skills/reviewer-response",
+      "entrypoint": "SKILL.md",
+      "category": "scientific-writing",
+      "description": "Build evidence-linked scientific reviewer responses, select necessary analyses, and optionally use external editing.",
+      "status": "active",
+      "license": "NOASSERTION",
+      "canonical_url": "https://github.com/ifanirene/useful-skills/tree/main/skills/reviewer-response",
+      "source": {
+        "type": "local",
+        "provider": "Local installed workflow",
+        "upstream_url": null,
+        "review_note": "Consolidated from the owner-maintained local installation on 2026-11-07 at the owner’s request. Earlier source history and redistribution license are unresolved; no external upstream or license is inferred. Only reusable instructions are retained; private article examples and review packets remain in the consuming project."
+      },
+      "compatibility": [
+        "agent-skills",
+        "claude-code",
+        "codex"
+      ],
+      "files": [
+        "SKILL.md"
       ]
     }
   ]

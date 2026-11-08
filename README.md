@@ -27,6 +27,8 @@ project context stay outside the public registry.
 | [`baoyu-article-illustrator`](skills/baoyu-article-illustrator/SKILL.md) | Scientific and article illustrations with controlled style, palette, and references |
 | [`figure-style`](skills/figure-style/SKILL.md) | Scientific plots and multi-panel figures with Nature guidance, palettes, legends, and rendered-output checks |
 | [`assemble-figure-in-illustrator`](skills/assemble-figure-in-illustrator/SKILL.md) | Native Illustrator assembly and local edits with manageable objects and editable annotations |
+| [`methods-writing`](skills/methods-writing/SKILL.md) | Scientific Methods with matched-source verification and reproducibility reporting |
+| [`reviewer-response`](skills/reviewer-response/SKILL.md) | Scientific reviewer replies grounded in completed work and verified evidence |
 | [`paper-narrative`](skills/paper-narrative/SKILL.md) | Question-first narrative for any research writing: `polish` the author's draft or `rewrite` it for delivery |
 | [`literature-review`](skills/literature-review/SKILL.md) | Verified paper lookup, method comparison, and evidence synthesis |
 | [`research-paper-analysis-writing`](skills/research-paper-analysis-writing/SKILL.md) | Reader-first technical paper analysis with evidence layers and ecosystem positioning |

@@ -22,3 +22,9 @@ graphify
 remote-compute-ssh
 living-wiki
 ouroboros
+
+methods-writing
+
+reviewer-response
+
+assemble-figure-in-illustrator

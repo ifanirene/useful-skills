@@ -43,6 +43,30 @@ plot or layout. Do not repeatedly shrink an exported panel to solve crowding.
 Use project font sizes measured after placement. Do not treat one project's sizes
 as a universal Nature rule; publication-specific checks belong to figure-style.
 
+## Redraw an existing figure with new data
+
+When the user supplies an existing figure and asks to redraw it with new data,
+treat the original as the visual specification. The new figure must remain highly
+similar unless the user requests a redesign. A data update alone does not authorize
+restyling or replacing the original with a generic publication preset.
+
+Inspect the original artwork before plotting. Reuse its editable source or plotting
+code when available. Match panel arrangement, canvas and plot proportions, spacing,
+colors and entity mappings, fonts and sizes, line widths, markers, axes and ticks,
+legend placement, and annotation style. Preserve axis ranges and category order
+when compatible with the new data and the original ordering rule.
+
+Update data-dependent marks, values, labels, statistics, and annotations from the
+new results. Make only necessary visual adjustments for new ranges or categories;
+do not clip, distort, or alter data to imitate the old result. Explain any necessary
+departure from the original appearance.
+
+Before delivery, compare the rendered old and new figures side by side at the same
+display size. Fix unintended style and layout differences. Completion requires
+both accurate new data and high visual similarity; a valid or attractive plot alone
+is not enough. If the original cannot be inspected, obtain it or state that visual
+similarity remains unverified.
+
 ## Prepare manageable artwork
 
 Read [plot-import.md](references/plot-import.md) when generating or replacing plots.

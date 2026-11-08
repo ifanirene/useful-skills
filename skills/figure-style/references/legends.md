@@ -1,64 +1,85 @@
 # Figure legends
 
-Write a short title for the whole figure, followed by panel descriptions in
-reading order and the information needed to interpret them. A manuscript legend
-should remain understandable with its figure alone. Under the dated Nature
-main-figure guidance, keep the complete legend below 250 words; verify a different
-venue's limit. The official source is in [nature-guidance.md](nature-guidance.md).
+Write a short title followed by panel descriptions in reading order. A legend
+should let the reader interpret the figure without the main text. Match existing
+legends from the same manuscript when available: title punctuation, panel syntax,
+terminology and level of detail. Use them as style references, not as evidence for
+the new figure's claims.
 
-## Legend contract
+Under the dated Nature main-figure guidance, keep the complete legend below 250
+words; verify the limit for the actual journal and figure type. See
+[nature-guidance.md](nature-guidance.md). A working word target is not a journal rule.
 
-Include only applicable items, grounded in the source results:
+## Choose what the reader needs
 
-- What each panel depicts: system, comparison, measured variable, transformation,
-  normalization, selection, and units that change interpretation.
-- Mean/median or other summary, error bars/bands, box/whisker definitions,
-  reference lines, symbols, and any essential visual key.
-- Exact group sample sizes and what they count. Distinguish independent biological
-  units, technical repeats, and nested observations. For a representative image,
-  identify the independent repeats supporting it and the scale bar.
-- Test, sidedness, pairing, and multiplicity adjustment where inferential results
-  are displayed. Define star thresholds if stars are used; preserve exact values
-  in source data. Statistical annotations are optional when there is no valid test.
-- Dataset attribution/citation and source-data availability where needed; spell
+Include applicable information grounded in the source results:
+
+- System, comparison, measured variable and units. Keep transformations,
+  normalization and selection rules when they change what the reader can infer.
+- Definitions of lines, colors, symbols, summaries and uncertainty. Group panels
+  with a shared readout and define shared details once. If the same color changes
+  meaning between panel groups, define it separately for each group.
+- Sample sizes and their units where needed to interpret the evidence or meet
+  journal requirements. Distinguish independent biological units from cells,
+  technical repeats and nested observations; define independent repeats for
+  representative images. Verify counts in the fact sheet even when the author
+  omits them from a descriptive legend. Do not automatically repeat printed
+  counts or add total cell numbers to every embedding.
+- Test, sidedness, pairing and multiplicity adjustment when inferential results
+  are displayed. Define statistical symbols; retain exact values in source data.
+- Scale bars, attribution and source-data availability where applicable. Spell
   out nonstandard abbreviations on first use.
 
-Separate the independent-unit count from the number of points. If 500 cells
-come from five mice, say both; do not imply 500 independent mice. Explain how
-the analysis handles the hierarchy if inference is shown.
+When inference is shown, state the independent unit and the sample size supporting
+it; cell counts do not substitute for animal or donor counts. Explain the handling
+of nesting or pairing where it affects interpretation.
 
-Use a title whose claim is supported by the figure. Keep the body descriptive;
-place broader biological interpretation in Results/Discussion. Reserve detailed
-protocols for Methods and local paths, regeneration commands, and environment
-fingerprints for project provenance. Internal analysis reports can have longer
-interpretation and provenance blocks when requested. The Engreitz report's
-collapsible HTML format is not required for a manuscript legend.
+Separate interpretive definitions from implementation details. A denominator or
+control-exclusion rule may belong in the legend; fitting settings, seeds, software
+versions, exact smoothing bandwidths and support filters usually belong in Methods
+unless the reader needs them to interpret that panel. Keep paths, commands and
+environment records in project provenance. A report caption may need more detail
+than a manuscript legend.
+
+Keep the title within the evidence and the body focused on what is shown. Use a
+brief qualification where a specific misreading is likely. Do not automatically
+append sentences announcing absent tests, absent confidence intervals or general
+limitations when no such inference is suggested. Broader implications and limits
+belong in Results, Discussion or Methods as appropriate. Removing boilerplate
+must not turn an association into a causal or lineage claim.
 
 ## Draft, then verify
 
-1. Extract a fact sheet from the source analysis: units, n, summaries, transforms,
-   filters, tests/corrections, repeated measurements, keys, and sources.
-2. Draft title → panels → shared statistical/replication information, referring to
-   panel letters exactly as printed. Describe shared details once when unambiguous.
-3. Read figure + legend without the main text. Check every quantitative statement
-   against a named result/table, and every description against the final export.
-4. Check the word limit and missing facts. Preserve unknowns as explicit draft
-   queries; never invent a sample size, test, accession, or interpretation.
+1. Extract a fact sheet: panel mapping, readouts, units, sample and replication
+   definitions, normalization, controls, selection and displayed statistics.
+2. Draft the title and panel groups in the manuscript's style. For each method
+   detail, decide whether it changes interpretation or only enables reproduction.
+3. Read the figure and legend together. Check each claim against the correct
+   source panel/group and each key against the saved figure. A matching number
+   somewhere in a manifest is insufficient; a top labeled tick is not necessarily
+   an axis limit.
+4. Check the actual final word count. Remove repeated labels, redundant counts
+   and generic closing caveats before compressing essential readout definitions.
+   Resolve unknowns as author queries; never invent n, tests or interpretations.
 
-Matching a numerical value somewhere in a manifest is not enough: verify that it
-belongs to the correct panel, group, endpoint, and analysis. An automated word
-count or structure check cannot validate these associations.
+If external review is requested, give the reviewer the figure, verified facts,
+relevant manuscript examples and the author's scope. When the author requests
+advice before drafting and revision afterward, preserve that sequence. Ask for
+specific edits or omissions, not expansion of every checklist item. Check the
+reviewed text against the sources and the author's preferences before adoption;
+model review is not scientific validation. External review is optional otherwise.
 
 ## Template
 
+Use the manuscript's numbering and punctuation:
+
 ```text
-Figure N | Brief title covering the whole figure.
-a, [What is depicted, including essential context and readout].
-b, [Comparison/relationship; keys or reference lines if needed].
-[Exact n and replicate definition, summary/error representation, applicable
-tests, sidedness/correction, and scale bars]. [Source attribution if applicable].
+Figure N. Brief title covering the whole figure.
+a, [System, readout and essential visual key].
+b–d, [Shared comparison and interpretation-changing definitions].
+[Applicable replication, statistics, scale bars or attribution].
 ```
 
-The brackets are authoring placeholders; resolve them before calling a legend
-final. Add a worked legend example only with its real published figure and
-verified source; generated numerical claims are not teaching material.
+Resolve placeholders before delivery. Teaching examples must use real published
+figures whose artwork and legends have been inspected at their source; keep
+unpublished project examples outside this reusable skill.

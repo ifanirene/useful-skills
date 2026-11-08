@@ -1,0 +1,4 @@
+interface:
+  display_name: "Methods Writing"
+  short_description: "Draft reproducible scientific Methods prose"
+  default_prompt: "Use $methods-writing to draft or revise a reproducible scientific Methods section."

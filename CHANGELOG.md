@@ -1,5 +1,33 @@
 # Changelog
 
+## 2026-11-07 — Scientific writing skill synchronization
+
+- Consolidated the updated methods-writing and reviewer-response workflows into
+  this canonical library; prior source history and licenses remain unresolved
+  (NOASSERTION). No private article text or project review packets are included.
+- Registered both skills in the index, README and scientific-writing/research/all
+  profiles; retained current figure-style and Illustrator assembly edits.
+- Refreshed Codex and Claude discovery from canonical sources, preserving earlier
+  installed directories outside discovery. Owner requested direct repo updates
+  and reinstallation. No remote publication is part of this local sync.
+
+## 2026-11-07 — Contextual figure legends
+
+- Revised figure-style legend guidance to match the target manuscript, distinguish
+  interpretive definitions from implementation detail, and avoid automatic count
+  repetition and generic closing caveats. Reporting needed for inference remains.
+- External review is optional and checked against the author’s scope and sources.
+- Owner explicitly authorized direct local skill edits. No commit or publication
+  was requested. Registry and index updated; profile membership is unchanged.
+
+## 2026-11-07 — Figure redraw fidelity
+
+- Clarified `assemble-figure-in-illustrator`: new-data redraws must closely match the supplied
+  original, with side-by-side visual checks and only data-required adjustments.
+  Scientific fidelity remains required. Updated registry and routing descriptions.
+- Restored `figure-style` unchanged; the redraw rule belongs only to the assembly skill.
+- Installed the assembly profile globally for Codex and Claude through canonical links.
+
 ## 2026-11-07
 
 - Added assemble-figure-in-illustrator as a separate local workflow invoking the

@@ -67,8 +67,10 @@ are suggestions; the requested endpoint and journal guidance take priority.
 
 For a new or substantively changed publication figure, read
 [legends.md](references/legends.md), write a companion legend, and check it against
-every panel and the source analysis. For a small cosmetic edit, review the
-existing legend and update only affected descriptions.
+every panel and the source analysis. Use available legends from the same
+manuscript to match its style, and distinguish information needed to interpret
+the figure from reproducibility detail for Methods. For a small cosmetic edit,
+review the existing legend and update only affected descriptions.
 
 Design examples must point to real published Nature figure panels whose original
 artwork has been inspected. Give the paper, figure/panel, source link, and the

@@ -3,3 +3,9 @@ literature-review
 research-paper-analysis-writing
 paper-narrative
 figure-style
+
+methods-writing
+
+reviewer-response
+
+assemble-figure-in-illustrator

@@ -16,13 +16,16 @@ breadth and output length to the question; verify both citation identity and cla
 
 Use for individual plots, multi-panel composition, figure revision, and review. Includes
 Nature guidance, a shared style/color configuration, legend writing, editable exports,
-and rendered-output checks. Read composition and other references only when needed.
+and rendered-output checks. Legends follow the target manuscript’s style and retain
+interpretation-changing definitions without repeating every audit item. Read
+composition and other references only when needed.
 
 ### [`assemble-figure-in-illustrator`](assemble-figure-in-illustrator/SKILL.md)
 
 Use for native Adobe Illustrator assembly and local panel replacement. Calls figure-style
 for plotting; adds selective rasterization, useful object grouping, JSX/UI operations
-and saved-file structure and whole-page review.
+and saved-file structure and whole-page review. New-data redraws must closely match
+the original figure, with side-by-side visual verification.
 
 ### [`baoyu-article-illustrator`](baoyu-article-illustrator/SKILL.md)
 
@@ -31,6 +34,16 @@ consistent style, palette, and reference images. Includes a dedicated scientific
 Generated schematics require factual and visual review; route quantitative plots to figure-style.
 
 ## Scientific writing
+
+### [`methods-writing`](methods-writing/SKILL.md)
+
+Use for scientific Methods prose, matched-run provenance, and reproducibility audits.
+Apply the target manuscript’s style and keep implementation records out of the prose.
+
+### [`reviewer-response`](reviewer-response/SKILL.md)
+
+Use for scientific revision letters: connect each concern to completed work, verified
+evidence and its meaning. External editing is optional.
 
 ### [`research-paper-analysis-writing`](research-paper-analysis-writing/SKILL.md)
 
