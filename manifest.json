@@ -752,6 +752,31 @@
       "files": [
         "SKILL.md"
       ]
+    },
+    {
+      "name": "omics-archives",
+      "path": "skills/omics-archives",
+      "entrypoint": "SKILL.md",
+      "category": "scientific-research",
+      "description": "Discover public omics datasets and verify study design, sample annotations, and file availability across five archives without a Claude Science dependency.",
+      "status": "experimental",
+      "license": "NOASSERTION",
+      "canonical_url": "https://github.com/ifanirene/useful-skills/tree/main/skills/omics-archives",
+      "source": {
+        "type": "original",
+        "provider": "local",
+        "upstream_url": null,
+        "review_note": "Independent instruction-only workflow based on public NCBI and EMBL-EBI API documentation, checked 2026-11-10. Name and scope inspired by Claude Science Omics Archives; no original connector code or schemas copied because redistribution terms are unresolved. Original package license unassigned; human functional and privacy review pending. See review/omics-archives-2026-11-10.md."
+      },
+      "compatibility": [
+        "agent-skills",
+        "claude-code",
+        "codex"
+      ],
+      "files": [
+        "SKILL.md",
+        "references/apis.md"
+      ]
     }
   ]
 }

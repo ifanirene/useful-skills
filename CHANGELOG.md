@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-11-10 — Portable Omics Archives workflow
+
+- Added an independent instruction-only `omics-archives` skill covering GEO,
+  ArrayExpress/BioStudies, MetaboLights, MGnify, and PRIDE through public APIs.
+- No Claude Science connector implementation or runtime is redistributed; the
+  original connector license is unresolved. This package does not install an MCP
+  server. Registered the skill, source record, and research/all/dedicated profiles.
+- Current MGnify guidance uses API v2; v1 serves frozen data. Live endpoint checks
+  and remaining functional/privacy review limits are in the local review packet.
+
 ## 2026-11-07 — Scientific writing skill synchronization
 
 - Consolidated the updated methods-writing and reviewer-response workflows into

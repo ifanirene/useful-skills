@@ -30,6 +30,7 @@ project context stay outside the public registry.
 | [`methods-writing`](skills/methods-writing/SKILL.md) | Scientific Methods with matched-source verification and reproducibility reporting |
 | [`reviewer-response`](skills/reviewer-response/SKILL.md) | Scientific reviewer replies grounded in completed work and verified evidence |
 | [`paper-narrative`](skills/paper-narrative/SKILL.md) | Question-first narrative for any research writing: `polish` the author's draft or `rewrite` it for delivery |
+| [`omics-archives`](skills/omics-archives/SKILL.md) | Find public datasets, verify sample design, and inspect files in GEO, ArrayExpress, MetaboLights, MGnify, and PRIDE |
 | [`literature-review`](skills/literature-review/SKILL.md) | Verified paper lookup, method comparison, and evidence synthesis |
 | [`research-paper-analysis-writing`](skills/research-paper-analysis-writing/SKILL.md) | Reader-first technical paper analysis with evidence layers and ecosystem positioning |
 | [`ai-programming-mindset`](skills/ai-programming-mindset/SKILL.md) | Diagnose feedback, verification, and orchestration gaps in AI-assisted engineering |

@@ -5,6 +5,13 @@ machine-readable record is [`../manifest.json`](../manifest.json).
 
 ## Scientific research
 
+### [`omics-archives`](omics-archives/SKILL.md)
+
+Use for public omics dataset discovery, study and sample metadata, file inventories,
+and reuse assessment across GEO, ArrayExpress/BioStudies, MetaboLights, MGnify, and
+PRIDE. Works through public APIs without Claude Science; uses available archive
+connectors when appropriate. It does not install an MCP server.
+
 ### [`literature-review`](literature-review/SKILL.md)
 
 Use for a specific-paper lookup, method comparison, or evidence synthesis. Match search

@@ -143,3 +143,12 @@ installations at the owner’s request on 2026-11-07. Their earlier provenance a
 redistribution terms are unresolved; both are recorded as `NOASSERTION`. The
 library retains reusable instructions only. Unpublished article examples, model
 consultation packets and project records remain outside the public package.
+
+`omics-archives` is an original instruction-only workflow based on public NCBI
+and EMBL-EBI documentation. The name and five-archive scope were inspired by
+Claude Science Omics Archives. Its connector implementation and schemas are not
+redistributed because no redistribution license was established. The local skill
+uses public APIs and optional existing host tools, with no Claude Science runtime
+dependency. Original package license is unassigned (`NOASSERTION`); human
+functional and privacy review is pending. See
+[the API reference](../skills/omics-archives/references/apis.md) for primary sources.
